@@ -40,7 +40,8 @@
 .ls-cards .card-name { font-size: 14.5px; }
 .ls-row { display: grid; grid-template-columns: 1.15fr 1fr; gap: 24px; }
 .ls-photo { background: var(--soft); display: flex; flex-direction: column; }
-.ls-photo-img { width: 100%; height: auto; aspect-ratio: 16 / 8; object-fit: cover; object-position: 70% 30%; }
+/* 사진이 남는 높이를 채워 옆 밸런스 패널과 높이를 맞춤 */
+.ls-photo-img { width: 100%; flex: 1 1 0; height: 0; min-height: 300px; object-fit: cover; object-position: 70% 30%; }
 .ls-body { padding: 36px 40px 40px; }
 .ls-tint { background: #eeeaf3; display: flex; }
 .ls-tint .ls-body { width: 100%; }
@@ -127,6 +128,7 @@
   .ls-count { margin-top: 16px; padding-top: 14px; }
   .a-ls h3 { font-size: 26px; }
   .ls-row { grid-template-columns: 1fr; }
+  .ls-photo-img { flex: none; height: auto; min-height: 0; aspect-ratio: 16 / 9; }
   .ls-body { padding: 24px 20px 28px; }
   .ls-tiles { grid-template-columns: 1fr 1fr; }
   .sol-list { grid-template-columns: 1fr; }
