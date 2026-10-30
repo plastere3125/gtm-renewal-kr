@@ -1,0 +1,99 @@
+{
+  "_note": "모든 항목의 출처는 국문 공개 사이트 https://gtm.uriweb.kr (2026-10-30 확인). 원문 표기 유지, 줄바꿈으로 어긋난 띄어쓰기만 정리",
+  "brand": {
+    "name": "GTM 코스메틱스",
+    "tagline": "Beauty begins with GTM",
+    "statement": "순수한 성분, 과학적인 추출, 피부 본연의 빛을 되살리다.",
+    "statement_source": "홈 메인 배너 문구"
+  },
+  "nav": [
+    {"label": "브랜드 소개", "url": "/34", "children": [
+      {"label": "브랜드 스토리", "url": "/34"}, {"label": "히스토리 / 인증", "url": "/157"}, {"label": "OEM / ODM", "url": "/158"},
+      {"label": "글로벌 비즈니스", "url": "/159"}, {"label": "오시는 길", "url": "/156"}, {"label": "파트너", "url": "/219"}]},
+    {"label": "제품 라인업", "url": "/137", "children": [
+      {"label": "NEW & RENEWAL 2026", "url": "/361"}, {"label": "스킨 부스터", "url": "/181"}, {"label": "안티에이징 솔루션", "url": "/347"},
+      {"label": "브라이트닝 솔루션", "url": "/348"}, {"label": "두피 케어 솔루션", "url": "/349"}, {"label": "엑소좀 솔루션", "url": "/350"},
+      {"label": "슬리밍 솔루션", "url": "/351"}, {"label": "토너", "url": "/352"}, {"label": "세럼 / 앰플", "url": "/353"},
+      {"label": "크림", "url": "/354"}, {"label": "마스크", "url": "/355"}, {"label": "클렌징", "url": "/356"},
+      {"label": "토탈 모공 케어", "url": "/357"}, {"label": "MTS 전용", "url": "/358"}, {"label": "전문의용", "url": "/409"}]},
+    {"label": "NMN LINE", "url": "/394", "children": [
+      {"label": "안티에이징", "url": "/419"}, {"label": "브라이트닝", "url": "/420"}, {"label": "엑소좀 솔루션", "url": "/421"}]},
+    {"label": "성분별 솔루션", "url": "/280", "children": [
+      {"label": "PDRN 솔루션", "url": "/868292335"}, {"label": "NMN 프리미엄", "url": "/299"}, {"label": "펄 토마토®", "url": "/300"},
+      {"label": "엑소좀", "url": "/301"}, {"label": "슬림엑서® & 펩타이드", "url": "/302"}, {"label": "스피큘 & 비타민 B12", "url": "/303"},
+      {"label": "비타민-K 솔루션", "url": "/304"}, {"label": "히알루로닉 & 콜라겐", "url": "/305"}, {"label": "비타민 & 보타니컬", "url": "/306"},
+      {"label": "특별 제형", "url": "/307"}]},
+    {"label": "고객 센터", "url": "/42", "children": [
+      {"label": "뉴스", "url": "/68"}, {"label": "카탈로그", "url": "/198"}, {"label": "FAQ", "url": "/309"}, {"label": "1:1 문의", "url": "/310"}]}
+  ],
+  "summaries": {
+    "105": "PDRN X NMN X Pearl Tomato® · 피부 컨디션을 깨우는 첫 순간, 인텐시브 리쥬비네이션 세럼",
+    "106": "PDRN X NMN X Pearl Tomato® · 어드밴스드 리쥬비네이션 크림",
+    "107": "PDRN X NMN X Pearl Tomato® · 피부에 쌓이는 콜라겐 밀도, 7-콜라겐 부스트 세럼",
+    "118": "칙칙한 피부에, 한 장으로 깨우는 즉각 광채. PDRN, NMN, 펄토마토® 3가지 핵심 원료를 담은 프리미엄 브라이트닝 마스크",
+    "110": "Day에는 피부 밸런스를 위한 산뜻한 수분케어, Night에는 피부에 탄력과 영양감을 더해주는 루틴 솔루션",
+    "108": "LHA 각질정돈 X 특허 복합 2종 · 피지 · 모공케어",
+    "90": "고농축 펩타이드 x 4세대 식물성 PDRN 스피큘 x 골드 캡슐",
+    "91": "고농축 펩타이드 x 4세대 식물성 PDRN 스피큘 x 레드 캡슐",
+    "16": "피부를 진정효과에 보습을 더해주는 저자극 약산성 모이스처 크림",
+    "19": "탁월한 진정 효과로 피지 분비를 잠재워주는 약산성 진정 세럼",
+    "21": "민감한 피부도 편안하게 사용할 수 있는 저자극 약산성 클렌징 젤",
+    "22": "피부에 수분을 채워 피부를 맑게 도와주는 저자극 약산성 토너",
+    "93": "10ml x 5vials 슬리밍 앰플",
+    "38": "당김없이 피부를 매끄럽고 윤기 있게 가꿔주는 밀크 클렌징",
+    "40": "프로방스 장미꽃수 함유 토너",
+    "41": "알로에베라잎 추출물로 만든 수딩 젤"
+  },
+  "ingredients": [
+    {"key": "biotech-nmn", "title": "바이오테크", "sub": "NMN", "text": "최신 바이오테크 기술로 완성한 혁신 성분이 피부 깊숙이 작용합니다.", "cat": "299", "catLabel": "NMN 프리미엄"},
+    {"key": "repair-pdrn", "title": "재생 리페어", "sub": "PDRN", "text": "손상된 피부를 보호하고 회복시켜주는 역할입니다.", "cat": "868292335", "catLabel": "PDRN 솔루션"},
+    {"key": "pearl-tomato", "title": "천연 성분", "sub": "Pearl Tomato®", "text": "천연 유래 성분으로 건강하고 순한 피부 케어입니다.", "cat": "300", "catLabel": "펄 토마토®"},
+    {"key": "exosome", "title": "엑소좀", "sub": "Exosome", "text": "피부 세포에 필요한 재생·회복·탄력·보습 신호를 전달해주는 역할입니다.", "cat": "301", "catLabel": "엑소좀"},
+    {"key": "peptide", "title": "펩타이드", "sub": "Peptide", "text": "탄력과 주름 개선을 돕는 단백질 성분입니다.", "cat": "302", "catLabel": "슬림엑서® & 펩타이드"},
+    {"key": "spicule", "title": "스피큘", "sub": "Spicule", "text": "피부를 순하게 재생하는 차세대 천연 미세침 성분입니다.", "cat": "303", "catLabel": "스피큘 & 비타민 B12"},
+    {"key": "calming", "title": "진정 색소", "sub": "Vitamin-K", "text": "피부 진정에 도움이 되는 색소, 즉 진정 성분을 함유한 제품입니다.", "cat": "304", "catLabel": "비타민-K 솔루션"},
+    {"key": "patent", "title": "특허 성분", "sub": "Patent", "text": "독자적으로 개발한 특허 성분이 함유되어, 피부에 깊은 영양과 재생 효과를 선사합니다.", "cat": "302", "catLabel": "슬림엑서® & 펩타이드"}
+  ],
+  "irritation_test": {
+    "headline": "피부에 닿는 제품이기에, 자극까지 확인했습니다.",
+    "title": "피부 일차자극 테스트 비자극(Excellent) 판정",
+    "body": "전문 임상기관에서 24시간 피부 첩포 후 피부반응을 평가한 결과, 인체 피부 일차자극 측면에서 비자극성 제품으로 확인되었습니다.",
+    "institute": "(주)에이스피부임상연구소",
+    "period": "2026.07.21 ~ 2026.07.23",
+    "subjects": "만 19세 이상 성인 32명",
+    "criteria": "피부 자극 지수 0.00 ~ 0.25 : 비(무)자극성(Excellent)",
+    "notice": "개인에 따라 피부 반응에는 차이가 있을 수 있습니다.",
+    "results": [["골드셀 8% NMN 프리미엄", "0.03"], ["골드셀 플러스 NMN 프리미엄", "0.00"], ["멜라셀 플러스 NMN 프리미엄", "0.00"],
+                ["엑소샤인 NMN 프리미엄", "0.02"], ["엑소멜라 NMN 프리미엄", "0.00"], ["엑소스칼프 NMN 프리미엄", "0.02"],
+                ["골드셀 플러스", "0.00"], ["멜라셀 플러스", "0.00"], ["스노우필 라하샷", "0.00"]],
+    "source": "국문 홈 팝업 이미지(cdn.imweb.me/upload/…/5d917d0364542.png)"
+  },
+  "reviews": [
+    {"product": "지티엠 피디알엔 이지에프 크림 50ml", "text": "정말 마음에 드는 크림입니다. 듬뿍 바르고 자고 일어나면 피부상태가 확연히달라집니다.", "author": "이**", "date": "2026-03-23"},
+    {"product": "지티엠 펩티큘 골드 크림", "idx": 90, "text": "바늘이 들어있는거처럼 따끔거려서 듬뿍 바르진 못하지만 확실히 바르면 피부결이나 광채가 조금 나는 것 같음. 열심히 써봐야겠음.", "author": "이**", "date": "2026-03-04"}
+  ],
+  "news": [
+    {"title": "COSME Week Osaka 2026 참가", "date": "2026.09.30 – 10.02", "place": "INTEX Osaka · Booth C4-11", "img": "etc/cosme-osaka-2026.webp"},
+    {"title": "K-뷰티엑스포 코리아 참가", "date": "10.15 – 10.17", "place": "킨텍스 제1전시장 3~5홀"},
+    {"title": "COSMOBEAUTÉ VIETNAM 2026 참가", "date": "2026.07.23 – 07.25", "place": "SECC, Ho Chi Minh City · Booth AF12"},
+    {"title": "INTERCHARM KOREA 2026 참가", "date": "07.01 – 07.03", "place": "COEX Hall A · F-41"}
+  ],
+  "news_source": "국문 홈 SNS 영역(공식 인스타그램 @cmedemi 게시물)의 행사명·일정·장소",
+  "category_shortcuts": ["353", "354", "355", "352", "356", "181", "357", "358"],
+  "lines": [
+    {"key": "pdrenza", "name": "피디렌자", "en": "PDRÉNZA", "lead": "PDRN X NMN X Pearl Tomato®", "idx": [105, 106, 118, 104], "color": "#e9a3ad"},
+    {"key": "pepticule", "name": "펩티큘", "en": "PEPTICULE", "lead": "고농축 펩타이드 x 4세대 식물성 PDRN 스피큘", "idx": [90, 91], "color": "#d13b4b"},
+    {"key": "snowpeel", "name": "스노우필", "en": "SNOW PEEL", "lead": "LHA 각질정돈 X 특허 복합 2종", "idx": [108, 109], "color": "#d6232e"},
+    {"key": "balance", "name": "밸런스", "en": "BALANCE", "lead": "저자극 약산성 토너 · 세럼 · 크림 · 클렌징 젤", "idx": [22, 19, 16, 21, 43, 44, 42], "color": "#c9a7c9"},
+    {"key": "vitak", "name": "비타-K", "en": "VITA-K", "lead": "비타-K 리페어", "idx": [88, 89], "color": "#9aa6b8"},
+    {"key": "slimline", "name": "슬림라인", "en": "SLIMLINE", "lead": "SLIMEXIR® 슬리밍 앰플", "idx": [93, 94, 119], "color": "#d9a441"}
+  ],
+  "footer": {
+    "tel": "02-416-7292", "fax": "02-416-7293", "email": "cmedemi@naver.com",
+    "company": "(주)씨메드", "ceo": "최종석", "bizno": "298-88-00658", "mailorder": "2022-서울송파-1388",
+    "address": "서울특별시 송파구 오금로 101, 5층(방이동)",
+    "factory": "경기도 하남시 미사강변중앙로 7번 안길 25 A동 301호 (풍산동 유테크밸리)",
+    "copyright": "Copyright ⓒ 2026 GTM 코스메틱스 – Beauty begins with GTM All rights reserved.",
+    "sns": [{"label": "Instagram", "url": "https://www.instagram.com/cmedemi/"}, {"label": "Facebook", "url": "https://www.facebook.com/cmedkorea/"}]
+  }
+}

@@ -1,0 +1,123 @@
+/* B안 · 나에게 맞는 스킨케어를 발견하다 — 아이보리·소프트 핑크, 패키지 색 포인트, 탐색 중심 */
+.concept-b { --bg: #fbf8f3; --soft: #f7e9e8; --pink: #e9a3ad; --pink-deep: #c9606f; --line: #ece2dc; --radius: 18px; --red: #c9606f; }
+.concept-b .site-header { background: rgba(251, 248, 243, 0.96); }
+.concept-b section { padding: 110px 0; }
+.concept-b .eyebrow { color: var(--pink-deep); }
+.concept-b .btn { border-radius: 999px; background: var(--pink-deep); }
+.concept-b .btn.soft { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
+.concept-b .card-img { border: 0; background: #fff; }
+.concept-b .tabs [aria-selected="true"] { background: var(--pink-deep); border-color: var(--pink-deep); }
+.b-head { margin-bottom: 40px; }
+.b-head h2 { margin-top: 8px; font-size: 36px; font-weight: 700; letter-spacing: -0.04em; }
+.b-head p:not(.eyebrow) { margin-top: 10px; color: var(--muted); }
+.b-head.row { display: flex; justify-content: space-between; align-items: flex-end; }
+
+/* 히어로: 카피와 제품을 나란히 둔 분할형 */
+.b-hero { padding: 0 !important; }
+.b-hero-grid { display: grid; grid-template-columns: 1fr 1.1fr; min-height: calc(100vh - var(--header-h)); max-height: 860px; }
+.b-hero-copy { background: var(--soft); padding: 80px max(40px, calc((100vw - 1280px) / 2 + 40px)); padding-right: 64px; display: flex; flex-direction: column; justify-content: center; }
+.b-hero-copy h1 { margin-top: 22px; font-size: 50px; font-weight: 700; letter-spacing: -0.05em; line-height: 1.3; }
+.b-hero-copy .lead { margin-top: 22px; color: var(--muted); font-size: 17px; }
+.b-hero-chips { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+.b-hero-chips a { min-height: 44px; display: inline-flex; align-items: center; padding: 0 18px; border-radius: 999px; background: #fff; font-size: 14.5px; font-weight: 500; }
+.b-hero-chips a:hover { background: var(--ink); color: #fff; }
+.b-hero-visual { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; padding: 14px; background: var(--bg); }
+.hv { position: relative; background: #fff; border-radius: var(--radius); overflow: hidden; }
+.hv img { width: 100%; height: 100%; object-fit: contain; padding: 6%; }
+.hv span { position: absolute; left: 16px; bottom: 14px; font-size: 13px; font-weight: 600; background: rgba(255, 255, 255, 0.92); padding: 6px 12px; border-radius: 999px; }
+.hv-1 { grid-row: span 2; }
+
+/* 제품군 바로가기 */
+.sc-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 12px; }
+.sc-tile { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 16px 8px 18px; border-radius: var(--radius); background: #fff; border: 1.5px solid transparent; min-height: 44px; }
+.sc-img { width: 100%; aspect-ratio: 1; }
+.sc-img img { width: 100%; height: 100%; object-fit: contain; }
+.sc-name { font-size: 14.5px; font-weight: 600; text-align: center; line-height: 1.35; }
+.sc-count { font-size: 12px; color: var(--muted); }
+.sc-tile[aria-selected="true"] { border-color: var(--pink-deep); background: var(--soft); }
+.sc-panels { margin-top: 36px; }
+
+/* 리뉴얼 슬라이더 */
+.b-renewal { background: #fff; }
+.slider { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 72px) / 4); gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding-bottom: 14px; scrollbar-width: thin; }
+.slider > li { scroll-snap-align: start; }
+.b-renewal .card-img { background: var(--bg); }
+.slider-nav { display: flex; gap: 8px; }
+.slider-nav button { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--line); font-size: 24px; line-height: 1; background: #fff; }
+.slider-nav button:hover { background: var(--ink); color: #fff; }
+
+/* 라인 */
+.ln-wrap { display: grid; grid-template-columns: 260px 1fr; gap: 48px; }
+.ln-tabs { display: flex; flex-direction: column; gap: 6px; }
+.ln-tabs [role="tab"] { display: grid; grid-template-columns: 1fr auto; text-align: left; padding: 16px 18px; border-radius: 14px; border-left: 4px solid transparent; min-height: 44px; }
+.ln-tabs .ln-en { font-size: 11.5px; letter-spacing: 0.14em; color: var(--muted); grid-column: 1; }
+.ln-tabs .ln-kr { font-size: 17px; font-weight: 600; grid-column: 1; }
+.ln-tabs .ln-n { grid-row: 1 / span 2; grid-column: 2; align-self: center; font-size: 13px; color: var(--muted); }
+.ln-tabs [aria-selected="true"] { background: #fff; border-left-color: var(--lc); }
+.ln-intro { padding: 28px 32px; border-radius: var(--radius); background: linear-gradient(110deg, color-mix(in srgb, var(--lc) 30%, #fff) 0%, #fff 70%); margin-bottom: 28px; }
+.ln-intro .ln-en { font-size: 12px; letter-spacing: 0.16em; font-weight: 600; }
+.ln-intro h3 { margin-top: 6px; font-size: 26px; letter-spacing: -0.03em; }
+.ln-intro p:last-child { margin-top: 6px; color: var(--muted); }
+
+/* 성분 */
+.b-ingredient { background: #fff; }
+.ig-chips { display: grid; grid-template-columns: repeat(8, 1fr); gap: 12px; margin-bottom: 36px; }
+.ig-chip { display: flex; flex-direction: column; border-radius: var(--radius); overflow: hidden; background: var(--bg); text-align: left; border: 2px solid transparent; }
+.ig-chip img { aspect-ratio: 1; width: 100%; object-fit: cover; }
+.ig-chip span { padding: 10px 12px 12px; font-size: 14px; font-weight: 600; display: flex; flex-direction: column; }
+.ig-chip small { font-size: 11.5px; font-weight: 500; color: var(--muted); }
+.ig-chip[aria-selected="true"] { border-color: var(--pink-deep); }
+.ig-panel { display: grid; grid-template-columns: 280px 1fr; gap: 40px; align-items: start; }
+.ig-desc h3 { font-size: 26px; letter-spacing: -0.03em; }
+.ig-desc h3 small { font-size: 14px; color: var(--muted); font-weight: 500; }
+.ig-desc p { margin: 12px 0 20px; color: var(--muted); }
+
+/* 구매평·소식 */
+.b-voice-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; }
+.reviews { display: grid; gap: 14px; margin-bottom: 22px; }
+.review { background: #fff; border-radius: var(--radius); padding: 26px 28px; }
+.rv-prod { font-size: 13px; color: var(--pink-deep); font-weight: 600; }
+.review blockquote { margin-top: 10px; font-size: 17px; line-height: 1.7; letter-spacing: -0.02em; }
+.rv-meta { margin-top: 12px; font-size: 13px; color: var(--muted); }
+.nw-list { border-top: 1px solid var(--ink); margin-bottom: 26px; }
+.nw-list li { display: grid; grid-template-columns: 130px 1fr; gap: 2px 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.nw-date { font-size: 13px; color: var(--pink-deep); font-weight: 600; grid-row: span 2; }
+.nw-title { font-weight: 600; }
+.nw-place { font-size: 13.5px; color: var(--muted); }
+
+@media (max-width: 1100px) {
+  .sc-grid, .ig-chips { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 900px) {
+  .concept-b section { padding: 72px 0; }
+  .b-head h2 { font-size: 26px; }
+  .b-head { margin-bottom: 26px; }
+  .b-hero-grid { grid-template-columns: 1fr; min-height: 0; max-height: none; }
+  .b-hero-copy { padding: 44px 20px 40px; }
+  .b-hero-copy h1 { font-size: 30px; margin-top: 16px; }
+  .b-hero-copy .lead { font-size: 15px; }
+  .b-hero-chips { margin-top: 26px; }
+  .b-hero-visual { height: 420px; padding: 12px; gap: 10px; }
+  .hv span { font-size: 11.5px; left: 10px; bottom: 10px; padding: 4px 10px; max-width: calc(100% - 20px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .sc-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .sc-tile { padding: 10px 4px 12px; border-radius: 14px; }
+  .sc-name { font-size: 12.5px; }
+  .sc-count { font-size: 11px; }
+  .slider { grid-auto-columns: 70%; gap: 14px; }
+  .slider-nav { display: none; }
+  .ln-wrap { grid-template-columns: 1fr; gap: 20px; }
+  .ln-tabs { flex-direction: row; overflow-x: auto; padding-bottom: 6px; }
+  .ln-tabs [role="tab"] { flex-shrink: 0; border-left: 0; border-bottom: 3px solid transparent; padding: 10px 16px; background: #fff; }
+  .ln-tabs [aria-selected="true"] { border-bottom-color: var(--lc); }
+  .ln-tabs .ln-n { display: none; }
+  .ln-intro { padding: 20px; }
+  .ln-intro h3 { font-size: 21px; }
+  .ig-chips { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .ig-chip span { padding: 8px; font-size: 12.5px; }
+  .ig-panel { grid-template-columns: 1fr; gap: 20px; }
+  .ig-desc h3 { font-size: 21px; }
+  .b-voice-grid { grid-template-columns: 1fr; gap: 56px; }
+  .review blockquote { font-size: 15.5px; }
+  .nw-list li { grid-template-columns: 1fr; }
+  .nw-date { grid-row: auto; }
+}

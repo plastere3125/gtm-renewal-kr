@@ -1,0 +1,1429 @@
+{
+ "checked_at": "2026-10-30T14:19",
+ "source": "https://gtm.uriweb.kr (국문 공개 페이지)",
+ "products": [
+  {
+   "idx": 16,
+   "name": "지티엠 밸런스 모이스처 크림 150ml",
+   "price": "59,000원",
+   "sale": "56,050원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "피부를 진정효과에 보습을 더해주는 저자극 약산성 모이스처 크림",
+   "img": "p/16.webp",
+   "cats": [
+    "354",
+    "302",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=16"
+  },
+  {
+   "idx": 19,
+   "name": "지티엠 밸런스 컨트롤 세럼 150ml",
+   "price": "64,000원",
+   "sale": "60,800원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "탁월한 진정 효과로 피지 분비를 잠재워주는 약산성 진정 세럼",
+   "img": "p/19.webp",
+   "cats": [
+    "353",
+    "307",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=19"
+  },
+  {
+   "idx": 21,
+   "name": "지티엠 밸런스 클렌징 젤 150ml",
+   "price": "37,000원",
+   "sale": null,
+   "pct": null,
+   "asking": false,
+   "desc": "민감한 피부도 편안하게 사용 할 수 있는 저자극 약산성 클렌징 젤",
+   "img": "p/21.webp",
+   "cats": [
+    "356",
+    "307",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=21"
+  },
+  {
+   "idx": 22,
+   "name": "지티엠 밸런스 컨트롤 토너 150ml",
+   "price": "33,000원",
+   "sale": "31,350원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "피부에 수분을 채워 피부를 맑게 도와주는 저자극 약산성 토너",
+   "img": "p/22.webp",
+   "cats": [
+    "352",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=22"
+  },
+  {
+   "idx": 29,
+   "name": "지티엠 릴리샷 스킨부스터 솔루션",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "",
+   "img": "p/29.webp",
+   "cats": [
+    "181",
+    "347",
+    "348",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=29"
+  },
+  {
+   "idx": 30,
+   "name": "지티엠 디큐 핀",
+   "price": "110,000원",
+   "sale": "104,500원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "DQ PIN 64 x 5개 특허 받은 64개의 미세침 으로 앰플의 유효성분이 피부 깊이 침투 하는 MTS",
+   "img": "p/30.webp",
+   "cats": [
+    "358",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=30"
+  },
+  {
+   "idx": 38,
+   "name": "지티엠 밀크 클렌징 500ml",
+   "price": "68,000원",
+   "sale": "64,600원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "당김없이 피부를 매끄럽고 윤기 있게 가꿔 주는 산뜻한 밀크 타입 의 클렌저",
+   "img": "p/38.webp",
+   "cats": [
+    "356",
+    "306",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=38"
+  },
+  {
+   "idx": 39,
+   "name": "지티엠 클렌징 젤 500ml",
+   "price": "70,000원",
+   "sale": null,
+   "pct": null,
+   "asking": false,
+   "desc": "세안 후에도 피부 당김없이 보습감을 부여 해주는 순한 젤 타입 클렌저",
+   "img": "p/39.webp",
+   "cats": [
+    "356",
+    "306",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=39"
+  },
+  {
+   "idx": 40,
+   "name": "지티엠 로즈 허브 토너 500ml",
+   "price": "68,000원",
+   "sale": "64,600원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "[프로방스 장미꽃수 함유] 피부에 수분보호막을 형성 하는 수분촉촉 대용량 토너",
+   "img": "p/40.webp",
+   "cats": [
+    "352",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=40"
+  },
+  {
+   "idx": 41,
+   "name": "지티엠 알로에 수딩 젤 500ml",
+   "price": "57,000원",
+   "sale": "54,150원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "알로에베라잎 추출물 로 수분공급과 피부 진정에 효과 적인 수딩 젤",
+   "img": "p/41.webp",
+   "cats": [
+    "356",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=41"
+  },
+  {
+   "idx": 42,
+   "name": "지티엠 밸런스 클렌징 젤 500ml",
+   "price": "70,000원",
+   "sale": null,
+   "pct": null,
+   "asking": false,
+   "desc": "민감한 피부도 편안하게 사용 할 수 있는 저자극 약산성 클렌징 젤",
+   "img": "p/42.webp",
+   "cats": [
+    "356",
+    "307",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=42"
+  },
+  {
+   "idx": 43,
+   "name": "지티엠 밸런스 컨트롤 토너 500ml",
+   "price": "65,000원",
+   "sale": "61,750원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "피부에 수분을 채워 피부를 맑게 도와주는 저자극 약산성 토너",
+   "img": "p/43.webp",
+   "cats": [
+    "352",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=43"
+  },
+  {
+   "idx": 44,
+   "name": "지티엠 밸런스 모이스처 크림 500ml",
+   "price": "90,000원",
+   "sale": "85,500원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "민감한피부를 진정시켜주는 저자극 약산성 모이스처 보습 크림",
+   "img": "p/44.webp",
+   "cats": [
+    "354",
+    "302",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=44"
+  },
+  {
+   "idx": 51,
+   "name": "지티엠 액티브 프로텍션 선 세럼 50ml",
+   "price": "22,000원",
+   "sale": "20,900원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "자외선으로부터 피부를 보호하고 피부의 미백에 도움 을 줍니다. 또한 피부의 주름개선에 도움 에도 탁월합니다. (SPF50+PA++++)",
+   "img": "p/51.webp",
+   "cats": [
+    "354",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=51"
+  },
+  {
+   "idx": 52,
+   "name": "지티엠 엑소멜라",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "",
+   "img": "p/52.webp",
+   "cats": [
+    "181",
+    "350",
+    "301",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=52"
+  },
+  {
+   "idx": 53,
+   "name": "지티엠 엑소샤인",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "",
+   "img": "p/53.webp",
+   "cats": [
+    "181",
+    "350",
+    "301",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=53"
+  },
+  {
+   "idx": 59,
+   "name": "지티엠 티톡스 필 프로페셔널",
+   "price": "160,000원",
+   "sale": "152,000원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "[천연 스피큘 필링] 트러블 케어, 모공케어, 피부톤 개선",
+   "img": "p/59.webp",
+   "cats": [
+    "357",
+    "303",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=59"
+  },
+  {
+   "idx": 65,
+   "name": "지티엠 엑소샤인 단품",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "",
+   "img": "p/65.webp",
+   "cats": [
+    "181",
+    "350",
+    "301",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=65"
+  },
+  {
+   "idx": 66,
+   "name": "지티엠 엑소멜라 단품",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "",
+   "img": "p/66.webp",
+   "cats": [
+    "181",
+    "350",
+    "301",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=66"
+  },
+  {
+   "idx": 67,
+   "name": "지티엠 엑소스칼프",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "",
+   "img": "p/67.webp",
+   "cats": [
+    "181",
+    "349",
+    "350",
+    "301",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=67"
+  },
+  {
+   "idx": 68,
+   "name": "지티엠 엑소스칼프 단품",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "",
+   "img": "p/68.webp",
+   "cats": [
+    "181",
+    "349",
+    "350",
+    "301",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=68"
+  },
+  {
+   "idx": 69,
+   "name": "GTM DQ FILL",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "Sterile 1.ml 부드럽고 탁월하게 볼륨감을 채워주는 바이패직필러",
+   "img": "p/69.webp",
+   "cats": [
+    "409",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=69"
+  },
+  {
+   "idx": 70,
+   "name": "GTM MONO FILL",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "(수출용) Sterile 1.1ml MGIT 공법 으로 주름개선 및 볼륨효과와 유지력 이 우수한 모노매직필러",
+   "img": "p/70.webp",
+   "cats": [
+    "409",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=70"
+  },
+  {
+   "idx": 77,
+   "name": "지티엠 스칼프 랩",
+   "price": "350,000원",
+   "sale": "332,500원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "Sterile 5mle x 10 vials 푸석하고 건조한 두피 에 깊은 영양을 제공 하는 스칼프 부스터",
+   "img": "p/77.webp",
+   "cats": [
+    "181",
+    "349",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=77"
+  },
+  {
+   "idx": 88,
+   "name": "비타-K 리페어 크림",
+   "price": "39,800원",
+   "sale": "37,810원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "붉은 기를 완화하고, 피부 장벽을 강화 하며, 미백 & 주름 개선 효과로 탄력 있고 균일한 피부 톤을 완성 해 주는 리페어 크림",
+   "img": "p/88.webp",
+   "cats": [
+    "354",
+    "302",
+    "304",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=88"
+  },
+  {
+   "idx": 89,
+   "name": "비타-K 리페어 마스크",
+   "price": "77,000원",
+   "sale": "73,150원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "즉각적인 진정 효과와 고농축 보습 성분 이 탄력과 영양을 채우며, 피부 장벽을 강화해 외부 자극으로부터 보호 하는 고기능성 복구 마스크팩",
+   "img": "p/89.webp",
+   "cats": [
+    "355",
+    "304",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=89"
+  },
+  {
+   "idx": 90,
+   "name": "지티엠 펩티큘 골드 크림",
+   "price": "75,000원",
+   "sale": "71,250원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "고농축 펩타이드 x 4세대 식물성 PDRN 스피큘 x 골드 캡슐 피부에 깊이 스며들어 탄력과 에너자이징 케어 효과를 극대화 하는 고기능성 크림",
+   "img": "p/90.webp",
+   "cats": [
+    "354",
+    "302",
+    "303",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=90"
+  },
+  {
+   "idx": 91,
+   "name": "지티엠 펩티큘 앰플",
+   "price": "77,000원",
+   "sale": "73,150원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "고농축 펩타이드 x 4세대 식물성 PDRN 스피큘 x 레드 캡슐 피부에 깊이 스며들어 탄력과 에너자이징 케어 효과를 극대화 하는 고기능성 앰플",
+   "img": "p/91.webp",
+   "cats": [
+    "353",
+    "302",
+    "303",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=91"
+  },
+  {
+   "idx": 92,
+   "name": "지티엠 멜라셀",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "",
+   "img": "p/92.webp",
+   "cats": [
+    "181",
+    "348",
+    "868292335",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=92"
+  },
+  {
+   "idx": 93,
+   "name": "지티엠 슬림라인 레드",
+   "price": "130,000원",
+   "sale": "123,500원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "10ml x 5vials 슬리밍 앰플",
+   "img": "p/93.webp",
+   "cats": [
+    "181",
+    "351",
+    "302",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=93"
+  },
+  {
+   "idx": 94,
+   "name": "지티엠 슬림라인 레몬",
+   "price": "155,000원",
+   "sale": "147,250원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "SLIMEXIR® 유럽 특허 슬리밍 복합체, X-Melt®, 아티초크잎추출물, Levan 지방세포 생성 억제 + 지방 분해 촉진 + 림프 순환 개선 바디 셀룰라이트, 부종, 울퉁불퉁한 피부 결 개선",
+   "img": "p/94.webp",
+   "cats": [
+    "181",
+    "351",
+    "302",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=94"
+  },
+  {
+   "idx": 99,
+   "name": "지티엠 골드셀8% NMN PREMIUM",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "5가지 프리미엄 성분으로 완성한 스킨부스터 포뮬러 PDRN · NMN · Pearl Tomato® ·  Glutathione ·  Hyaluronic Acid 풍부한 보습과 영양으로 피부를 윤기 있고 매끄럽게 가꾸어 줍니다.",
+   "img": "p/99.webp",
+   "cats": [
+    "361",
+    "181",
+    "347",
+    "394",
+    "419",
+    "868292335",
+    "299",
+    "300",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=99"
+  },
+  {
+   "idx": 100,
+   "name": "지티엠 골드셀+ NMN 프리미엄",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "NMN & 펄토마토®를 더해 완성한 프리미엄 리바이탈 스킨 에너지 부스터 PDRN과 히알루논산이 피부에 풍부한 수분을 채워 촉촉하고 매끄러운 피부로 가꾸어 주며, NMN과 펄토마토®를 더한 프리미엄 포뮬러가 윤기와 생기를 더해 건강한 피부 컨디션을 유지하는 데 도움을 줍니다.",
+   "img": "p/100.webp",
+   "cats": [
+    "361",
+    "181",
+    "347",
+    "394",
+    "419",
+    "868292335",
+    "299",
+    "300",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=100"
+  },
+  {
+   "idx": 101,
+   "name": "지티엠 멜라셀+ NMN 프리미엄",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "",
+   "img": "p/101.webp",
+   "cats": [
+    "361",
+    "181",
+    "348",
+    "394",
+    "420",
+    "299",
+    "300",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=101"
+  },
+  {
+   "idx": 102,
+   "name": "지티엠 엑소스칼프 NMN 프리미엄",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "",
+   "img": "p/102.webp",
+   "cats": [
+    "361",
+    "181",
+    "349",
+    "350",
+    "394",
+    "421",
+    "299",
+    "300",
+    "301",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=102"
+  },
+  {
+   "idx": 103,
+   "name": "지티엠 엑소스칼프 NMN 프리미엄 스타터 키트 (단품)",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "NMN & 펄토마토®를 더해 완성한 프리미엄 스칼프 에너지 부스터 PDRN, 펩타이드 콤플렉스, 판테놀, 징크 PCA, 카페인 등 두피 컨디셔닝 성분에 NMN과 펄토마토®를 더한 프리미엄 포뮬러가 두피에 영양과 보습을 공급하여 건강한 두피 환경을 유지하는 데 도움을 줍니다. 또한 인체피부섬유아세포유도다분화능 세포배양액이 함유된 엑소 시그널 1000 파우더와 함께 사용 시 두피 컨디션을 균형 있게 관리하여 생기 있고 윤기 있는 모발 환경으로 가꾸어 줍니다.",
+   "img": "p/103.webp",
+   "cats": [
+    "361",
+    "181",
+    "349",
+    "350",
+    "394",
+    "421",
+    "299",
+    "300",
+    "301",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=103"
+  },
+  {
+   "idx": 104,
+   "name": "지티엠 피디렌자 세트",
+   "price": "160,000원",
+   "sale": "152,000원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "",
+   "img": "p/104.webp",
+   "cats": [
+    "361",
+    "394",
+    "420",
+    "868292335",
+    "299",
+    "300",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=104"
+  },
+  {
+   "idx": 105,
+   "name": "지티엠 피디렌자 세럼",
+   "price": "79,000원",
+   "sale": "75,050원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "PDRN X NMN X Pearl Tomato® 피부 컨디션을 깨우는 첫 순간, 인텐시브 리쥬비네이션 세럼",
+   "img": "p/105.webp",
+   "cats": [
+    "361",
+    "353",
+    "394",
+    "420",
+    "868292335",
+    "299",
+    "300",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=105"
+  },
+  {
+   "idx": 106,
+   "name": "지티엠 피디렌자 크림",
+   "price": "80,000원",
+   "sale": "76,000원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "PDRN X NMN X Pearl Tomato®-어드밴스드 리쥬비네이션 크림",
+   "img": "p/106.webp",
+   "cats": [
+    "361",
+    "354",
+    "394",
+    "420",
+    "868292335",
+    "299",
+    "300",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=106"
+  },
+  {
+   "idx": 107,
+   "name": "지티엠 콜라겐 세럼",
+   "price": "78,000원",
+   "sale": "74,100원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "PDRN X NMN X Pearl Tomato® 피부에 쌓이는 콜라겐 밀도, 7-콜라겐 부스트 세럼",
+   "img": "p/107.webp",
+   "cats": [
+    "361",
+    "353",
+    "394",
+    "420",
+    "868292335",
+    "300",
+    "305",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=107"
+  },
+  {
+   "idx": 108,
+   "name": "지티엠 스노우필 라하샷 (세트)",
+   "price": "140,000원",
+   "sale": "133,000원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "LHA 각질정돈 X 특허 복합 2종 피지 · 모공케어, 듀얼 시스템 각질 정돈 · 피지 · 모공케어로 매끈하고 환해 보이는 피부 (원료특허)",
+   "img": "p/108.webp",
+   "cats": [
+    "361",
+    "355",
+    "394",
+    "420",
+    "868292335",
+    "300",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=108"
+  },
+  {
+   "idx": 109,
+   "name": "지티엠 스노우필 라하샷 스타터 키트 (단품)",
+   "price": "29,000원",
+   "sale": "27,550원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "",
+   "img": "p/109.webp",
+   "cats": [
+    "361",
+    "355",
+    "394",
+    "420",
+    "868292335",
+    "300",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=109"
+  },
+  {
+   "idx": 110,
+   "name": "지티엠 멜라듀얼 데이 & 나이트 크림",
+   "price": "88,000원",
+   "sale": "83,600원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "Day에는 피부 밸런스를 위한 산뜻한 수분케어 Night에는 피부에 탄력과 영양감을 더해주는 루틴 솔루션 하루의 리듬에 맞춘 24h 데일리 케어",
+   "img": "p/110.webp",
+   "cats": [
+    "361",
+    "354",
+    "394",
+    "419",
+    "420",
+    "868292335",
+    "300",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=110"
+  },
+  {
+   "idx": 111,
+   "name": "지티엠 골드셀+",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "",
+   "img": "p/111.webp",
+   "cats": [
+    "181",
+    "347",
+    "394",
+    "419",
+    "868292335",
+    "299",
+    "300",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=111"
+  },
+  {
+   "idx": 112,
+   "name": "지티엠 멜라셀+",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "",
+   "img": "p/112.webp",
+   "cats": [
+    "181",
+    "348",
+    "868292335",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=112"
+  },
+  {
+   "idx": 118,
+   "name": "지티엠 피디렌자 크리스탈 마스크",
+   "price": "95,000원",
+   "sale": "90,250원",
+   "pct": "5%",
+   "asking": false,
+   "desc": "칙칙한 피부에, 한 장으로 깨우는 즉각 광채. 지티엠 피디렌자 크리스탈 마스크는 PDRN, NMN, 펄토마토® 3가지 핵심 원료를 담은 프리미엄 브라이트닝 마스크입니다. 즉각 미백 효과가 확인된 크리스탈 미백 시트가 피부에 밀착되어 사용 직후 더욱 말고 화사해 보이는 피부로 가꾸어 줍니다. 얼굴부터 목까지 한번에 감싸, 생기 잃은 피부에 촉촉한 광재감을 선사합니다.",
+   "img": "p/118.webp",
+   "cats": [
+    "361",
+    "355",
+    "394",
+    "419",
+    "420",
+    "868292335",
+    "299",
+    "300",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=118"
+  },
+  {
+   "idx": 119,
+   "name": "지티엠 슬림라인 유어 엔엠엔 프리미엄",
+   "price": "160,000원",
+   "sale": null,
+   "pct": null,
+   "asking": false,
+   "desc": "",
+   "img": "p/119.webp",
+   "cats": [
+    "361",
+    "181",
+    "351",
+    "868292335",
+    "299",
+    "300",
+    "302",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=119"
+  },
+  {
+   "idx": 120,
+   "name": "지티엠 엑소멜라 NMN 프리미엄",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "",
+   "img": "p/120.webp",
+   "cats": [
+    "361",
+    "181",
+    "350",
+    "394",
+    "421",
+    "299",
+    "300",
+    "301",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=120"
+  },
+  {
+   "idx": 121,
+   "name": "지티엠 엑소멜라 NMN 프리미엄 스타터 키트 (단품)",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "",
+   "img": "p/121.webp",
+   "cats": [
+    "361",
+    "181",
+    "350",
+    "394",
+    "421",
+    "299",
+    "300",
+    "301",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=121"
+  },
+  {
+   "idx": 122,
+   "name": "지티엠 엑소샤인 NMN 프리미엄",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "",
+   "img": "p/122.webp",
+   "cats": [
+    "361",
+    "181",
+    "350",
+    "394",
+    "421",
+    "299",
+    "300",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=122"
+  },
+  {
+   "idx": 123,
+   "name": "지티엠 엑소샤인 NMN 프리미엄 스타터 키트 (단품)",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "",
+   "img": "p/123.webp",
+   "cats": [
+    "361",
+    "181",
+    "350",
+    "394",
+    "421",
+    "299",
+    "300",
+    "301",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=123"
+  },
+  {
+   "idx": 124,
+   "name": "지티엠 리쥬아이",
+   "price": "240,000원",
+   "sale": null,
+   "pct": null,
+   "asking": false,
+   "desc": "",
+   "img": "p/124.webp",
+   "cats": [
+    "361",
+    "409",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=124"
+  },
+  {
+   "idx": 125,
+   "name": "지티엠 비타 케이 NMN 프리미엄 마스크",
+   "price": null,
+   "sale": null,
+   "pct": null,
+   "asking": true,
+   "desc": "",
+   "img": "p/125.webp",
+   "cats": [
+    "355",
+    "868292335",
+    "299",
+    "300",
+    "306",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=125"
+  },
+  {
+   "idx": 126,
+   "name": "지티엠 릴리샷 디큐샷",
+   "price": "99,000원",
+   "sale": null,
+   "pct": null,
+   "asking": false,
+   "desc": "",
+   "img": "p/126.webp",
+   "cats": [
+    "361",
+    "358",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=126"
+  },
+  {
+   "idx": 127,
+   "name": "지티엠 멜라셀 디큐샷",
+   "price": "99,000원",
+   "sale": null,
+   "pct": null,
+   "asking": false,
+   "desc": "",
+   "img": "p/127.webp",
+   "cats": [
+    "361",
+    "358",
+    "137"
+   ],
+   "url": "https://gtm.uriweb.kr/shop_view/?idx=127"
+  }
+ ],
+ "categories": {
+  "361": {
+   "name": "NEW & RENEWAL 2026",
+   "idx": [
+    127,
+    126,
+    124,
+    122,
+    120,
+    102,
+    119,
+    123,
+    121,
+    103,
+    118,
+    99,
+    100,
+    101,
+    110,
+    108,
+    109,
+    106,
+    105,
+    107,
+    104
+   ]
+  },
+  "181": {
+   "name": "스킨 부스터",
+   "idx": [
+    122,
+    120,
+    102,
+    119,
+    123,
+    121,
+    103,
+    99,
+    100,
+    101,
+    111,
+    112,
+    94,
+    93,
+    92,
+    53,
+    52,
+    67,
+    65,
+    66,
+    68,
+    29,
+    77
+   ]
+  },
+  "347": {
+   "name": "안티에이징 솔루션",
+   "idx": [
+    99,
+    100,
+    111,
+    29
+   ]
+  },
+  "348": {
+   "name": "브라이트닝 솔루션",
+   "idx": [
+    101,
+    112,
+    92,
+    29
+   ]
+  },
+  "349": {
+   "name": "두피 케어 솔루션",
+   "idx": [
+    102,
+    103,
+    67,
+    68,
+    77
+   ]
+  },
+  "350": {
+   "name": "엑소좀 솔루션",
+   "idx": [
+    122,
+    120,
+    102,
+    123,
+    121,
+    103,
+    53,
+    52,
+    67,
+    65,
+    66,
+    68
+   ]
+  },
+  "351": {
+   "name": "슬리밍 솔루션",
+   "idx": [
+    119,
+    94,
+    93
+   ]
+  },
+  "352": {
+   "name": "토너",
+   "idx": [
+    40,
+    43,
+    22
+   ]
+  },
+  "353": {
+   "name": "세럼 / 앰플",
+   "idx": [
+    105,
+    107,
+    91,
+    19
+   ]
+  },
+  "354": {
+   "name": "크림",
+   "idx": [
+    110,
+    106,
+    90,
+    88,
+    51,
+    16,
+    44
+   ]
+  },
+  "355": {
+   "name": "마스크",
+   "idx": [
+    125,
+    118,
+    108,
+    109,
+    89
+   ]
+  },
+  "356": {
+   "name": "클렌징",
+   "idx": [
+    38,
+    41,
+    39,
+    42,
+    21
+   ]
+  },
+  "357": {
+   "name": "토탈 모공 케어",
+   "idx": [
+    59
+   ]
+  },
+  "358": {
+   "name": "MTS 전용",
+   "idx": [
+    127,
+    126,
+    30
+   ]
+  },
+  "409": {
+   "name": "전문의용",
+   "idx": [
+    124,
+    69,
+    70
+   ]
+  },
+  "394": {
+   "name": "NMN LINE",
+   "idx": [
+    122,
+    120,
+    102,
+    123,
+    121,
+    103,
+    118,
+    99,
+    100,
+    101,
+    110,
+    108,
+    109,
+    106,
+    105,
+    107,
+    104,
+    111
+   ]
+  },
+  "419": {
+   "name": "NMN 안티에이징",
+   "idx": [
+    118,
+    99,
+    100,
+    110,
+    111
+   ]
+  },
+  "420": {
+   "name": "NMN 브라이트닝",
+   "idx": [
+    118,
+    101,
+    110,
+    108,
+    109,
+    106,
+    105,
+    107,
+    104
+   ]
+  },
+  "421": {
+   "name": "NMN 엑소좀 솔루션",
+   "idx": [
+    122,
+    120,
+    102,
+    123,
+    121,
+    103
+   ]
+  },
+  "868292335": {
+   "name": "PDRN 솔루션",
+   "idx": [
+    125,
+    119,
+    118,
+    99,
+    100,
+    110,
+    108,
+    109,
+    106,
+    105,
+    107,
+    104,
+    111,
+    112,
+    92
+   ]
+  },
+  "299": {
+   "name": "NMN 프리미엄",
+   "idx": [
+    125,
+    122,
+    120,
+    102,
+    119,
+    123,
+    121,
+    103,
+    118,
+    99,
+    100,
+    101,
+    106,
+    105,
+    104,
+    111
+   ]
+  },
+  "300": {
+   "name": "펄 토마토®",
+   "idx": [
+    125,
+    122,
+    120,
+    102,
+    119,
+    123,
+    121,
+    103,
+    118,
+    99,
+    100,
+    101,
+    110,
+    108,
+    109,
+    106,
+    105,
+    107,
+    104,
+    111
+   ]
+  },
+  "301": {
+   "name": "엑소좀",
+   "idx": [
+    120,
+    102,
+    123,
+    121,
+    103,
+    53,
+    52,
+    67,
+    65,
+    66,
+    68
+   ]
+  },
+  "302": {
+   "name": "슬림엑서® & 펩타이드",
+   "idx": [
+    119,
+    94,
+    93,
+    91,
+    90,
+    88,
+    16,
+    44
+   ]
+  },
+  "303": {
+   "name": "스피큘 & 비타민 B12",
+   "idx": [
+    91,
+    90,
+    59
+   ]
+  },
+  "304": {
+   "name": "비타민-K 솔루션",
+   "idx": [
+    89,
+    88
+   ]
+  },
+  "305": {
+   "name": "히알루로닉 & 콜라겐",
+   "idx": [
+    107
+   ]
+  },
+  "306": {
+   "name": "비타민 & 보타니컬",
+   "idx": [
+    125,
+    38,
+    39
+   ]
+  },
+  "307": {
+   "name": "특별 제형",
+   "idx": [
+    19,
+    42,
+    21
+   ]
+  },
+  "137": {
+   "name": "제품 라인업",
+   "idx": [
+    127,
+    126,
+    125,
+    124,
+    122,
+    120,
+    102,
+    119,
+    123,
+    121,
+    103,
+    118,
+    99,
+    100,
+    101,
+    110,
+    108,
+    109,
+    106,
+    105,
+    107,
+    104,
+    111,
+    112,
+    94,
+    93,
+    91,
+    90,
+    89,
+    88,
+    92,
+    53,
+    52,
+    67,
+    65,
+    66,
+    68,
+    29,
+    77,
+    51,
+    38,
+    40,
+    30,
+    41,
+    43,
+    19,
+    22,
+    16,
+    69,
+    70,
+    44,
+    59,
+    39,
+    42,
+    21
+   ]
+  }
+ }
+}
