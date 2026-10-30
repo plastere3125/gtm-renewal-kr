@@ -220,7 +220,7 @@ def build_a():
       </article>
       <article class="ls-tint">
         <div class="ls-body"><p class="ls-en">BALANCE</p><h3>밸런스</h3><p class="ls-lead">저자극 약산성 토너 · 세럼 · 크림 · 클렌징 젤</p>
-          <ul class="ls-minis grid2">{mini(22)}{mini(19)}{mini(16)}{mini(21)}</ul></div>
+          <ul class="ls-tiles">{mini(22)}{mini(19)}{mini(16)}{mini(21)}</ul></div>
       </article>
     </div>"""
     sol_desc = {i["cat"]: i["text"] for i in S["ingredients"] if i["key"] != "patent"}

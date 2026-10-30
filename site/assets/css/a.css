@@ -42,9 +42,9 @@
 .ls-photo { background: var(--soft); display: flex; flex-direction: column; }
 .ls-photo-img { width: 100%; height: auto; aspect-ratio: 16 / 8; object-fit: cover; object-position: 70% 30%; }
 .ls-body { padding: 36px 40px 40px; }
-.ls-tint { background: #eeeaf3; display: flex; align-items: center; }
+.ls-tint { background: #eeeaf3; display: flex; }
+.ls-tint .ls-body { width: 100%; }
 .ls-minis { margin-top: 24px; display: grid; gap: 10px; }
-.ls-minis.grid2 { grid-template-columns: 1fr 1fr; }
 .ls-mini { width: 100%; display: flex; align-items: center; gap: 14px; text-align: left; background: #fff; padding: 10px 14px 10px 10px; }
 .ls-mini img { width: 72px; height: 72px; object-fit: contain; flex-shrink: 0; }
 .ls-mini > span { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
@@ -52,6 +52,15 @@
 .ls-mini .price { font-size: 12.5px; }
 .ls-mini .price strong { font-size: 13.5px; }
 .ls-mini:hover { box-shadow: inset 0 0 0 1px var(--ink); }
+.ls-minis .price { min-height: 0; }
+/* 밸런스: 세로형 타일 4개, 이름 2줄·가격 2줄 높이 고정으로 크기 통일 */
+.ls-tiles { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; grid-auto-rows: 1fr; }
+.ls-tiles li { display: flex; }
+.ls-tiles .ls-mini { flex-direction: column; align-items: stretch; gap: 10px; padding: 14px 16px 18px; height: 100%; }
+.ls-tiles .ls-mini img { width: 100%; height: auto; aspect-ratio: 4 / 3; }
+.ls-tiles .ls-mini-name { font-size: 14.5px; min-height: 2.8em; }
+.ls-tiles .price { flex-wrap: wrap; align-content: flex-end; gap: 0 6px; min-height: 3em; }
+.ls-tiles .price strong { flex-basis: 100%; font-size: 15px; }
 
 /* 성분별 솔루션 */
 .a-solution { background: var(--soft); }
@@ -119,7 +128,7 @@
   .a-ls h3 { font-size: 26px; }
   .ls-row { grid-template-columns: 1fr; }
   .ls-body { padding: 24px 20px 28px; }
-  .ls-minis.grid2 { grid-template-columns: 1fr; }
+  .ls-tiles { grid-template-columns: 1fr 1fr; }
   .sol-list { grid-template-columns: 1fr; }
   .sol-thumbs img { width: 56px; height: 56px; }
   .a-safety h2 { font-size: 22px; }
