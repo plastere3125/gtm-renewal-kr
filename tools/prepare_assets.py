@@ -40,6 +40,19 @@ def main():
         src = home(pre)
         size = webp(src, IMG / "ing" / f"{key}.webp", 700)
         sources.append({"file": f"ing/{key}.webp", "source": json_src(src), "use": f"B안 성분별 탐색 · {key}", "size": size})
+    # 메인 배너 원본에서 글자가 없는 연출 장면만 잘라 사용(배너 문구 영역은 쓰지 않음)
+    for key, pre, box, use in [
+        ("hero-a-banner", "005", (0, 0, 1, 1), "A안 히어로(PC) · 2026 신제품 배너 장면. 원본 문구가 있는 왼쪽 영역은 HTML 패널로 덮어 사용"),
+        ("hero-a-stage-m", "005", (0.46, 0, 1, 1), "A안 히어로(모바일) · 2026 신제품 무대 장면(가로 배너 글자 영역 제외)"),
+        ("hero-b-lineup", "005", (0.46, 0, 1, 1), "B안 히어로 슬라이드 1 · 2026 신제품 라인업 장면"),
+        ("hero-b-pepticule", "006", (0.37, 0, 1, 1), "B안 히어로 슬라이드 2 · 펩티큘 모델 장면")]:
+        src = home(pre)
+        im = Image.open(src).convert("RGB")
+        w, h = im.size
+        im = im.crop((round(w * box[0]), round(h * box[1]), round(w * box[2]), round(h * box[3])))
+        im.thumbnail((1905, 1905), Image.LANCZOS)
+        im.save(IMG / "etc" / f"{key}.webp", "WEBP", quality=84, method=6)
+        sources.append({"file": f"etc/{key}.webp", "source": json_src(src), "use": use, "size": im.size})
     # 로고(투명 PNG), 전시 포스터, 피부 자극 시험 팝업
     logo = Image.open(home("131")).convert("RGBA")
     logo = logo.crop(logo.getchannel("A").getbbox())

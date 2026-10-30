@@ -630,6 +630,42 @@
   ]
  },
  {
+  "file": "etc/hero-a-banner.webp",
+  "source": "https://cdn.imweb.me/thumbnail/20260206/e0b14e43deab3.jpg",
+  "use": "A안 히어로(PC) · 2026 신제품 배너 장면. 원본 문구가 있는 왼쪽 영역은 HTML 패널로 덮어 사용",
+  "size": [
+   1905,
+   715
+  ]
+ },
+ {
+  "file": "etc/hero-a-stage-m.webp",
+  "source": "https://cdn.imweb.me/thumbnail/20260206/e0b14e43deab3.jpg",
+  "use": "A안 히어로(모바일) · 2026 신제품 무대 장면(가로 배너 글자 영역 제외)",
+  "size": [
+   1037,
+   721
+  ]
+ },
+ {
+  "file": "etc/hero-b-lineup.webp",
+  "source": "https://cdn.imweb.me/thumbnail/20260206/e0b14e43deab3.jpg",
+  "use": "B안 히어로 슬라이드 1 · 2026 신제품 라인업 장면",
+  "size": [
+   1037,
+   721
+  ]
+ },
+ {
+  "file": "etc/hero-b-pepticule.webp",
+  "source": "https://cdn.imweb.me/thumbnail/20250911/29e0d26cf682f.png",
+  "use": "B안 히어로 슬라이드 2 · 펩티큘 모델 장면",
+  "size": [
+   1200,
+   715
+  ]
+ },
+ {
   "file": "etc/logo.png",
   "source": "https://cdn.imweb.me/thumbnail/20260730/ececb0496cdef.png",
   "use": "로고(헤더·푸터)",

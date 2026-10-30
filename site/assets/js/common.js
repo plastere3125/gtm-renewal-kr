@@ -86,6 +86,29 @@
     if (next) next.addEventListener("click", function () { sl.scrollBy({ left: step(), behavior: "smooth" }); });
   });
 
+  // B안 히어로 장면 전환(6초 자동, 멈춤 가능, 동작 줄이기 설정 존중)
+  document.querySelectorAll(".b-hero-slides").forEach(function (box) {
+    var slides = box.querySelectorAll(".hs-slide");
+    var dots = box.querySelectorAll(".hs-dot");
+    var pause = box.querySelector(".hs-pause");
+    var cur = 0, timer = null;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function show(n) {
+      cur = (n + slides.length) % slides.length;
+      slides.forEach(function (s, i) { s.classList.toggle("is-on", i === cur); s.setAttribute("aria-hidden", String(i !== cur)); });
+      dots.forEach(function (d, i) { d.classList.toggle("is-on", i === cur); d.setAttribute("aria-current", String(i === cur)); });
+    }
+    function play() { stop(); timer = setInterval(function () { show(cur + 1); }, 6000); pause.textContent = "Ⅱ"; pause.setAttribute("aria-label", "자동 넘김 멈춤"); }
+    function stop() { if (timer) clearInterval(timer); timer = null; }
+    dots.forEach(function (d, i) { d.addEventListener("click", function () { show(i); if (timer) play(); }); });
+    pause.addEventListener("click", function () {
+      if (timer) { stop(); pause.textContent = "▶"; pause.setAttribute("aria-label", "자동 넘김 시작"); } else play();
+    });
+    box.addEventListener("focusin", stop);
+    show(0);
+    if (!reduce) play(); else { pause.textContent = "▶"; pause.setAttribute("aria-label", "자동 넘김 시작"); }
+  });
+
   // 상품 미리보기
   var modal = document.getElementById("preview");
   var data = window.GTM_PRODUCTS || {};

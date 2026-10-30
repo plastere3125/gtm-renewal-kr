@@ -155,7 +155,6 @@ def page(concept, title, body):
 
 # ───────────────────────── A안: 피부 과학의 정제된 아름다움
 def build_a():
-    hero = PROD[105]
     line = [105, 106, 118, 104]
     it = S["irritation_test"]
     rows = "".join(f"<tr><th scope='row'>{e(n)}</th><td>{v}</td><td>비자극 (Excellent)</td></tr>" for n, v in it["results"])
@@ -173,17 +172,24 @@ def build_a():
         + f'<p class="news-date">{e(n["date"])}</p><h3>{e(n["title"])}</h3><p class="news-place">{e(n["place"])}</p></li>' for n in news)
     body = f"""
 <section class="a-hero">
-  <div class="wrap a-hero-grid">
+  <div class="a-hero-stage">
+    <picture>
+      <source media="(max-width: 900px)" srcset="../assets/img/etc/hero-a-stage-m.webp">
+      <img src="../assets/img/etc/hero-a-banner.webp" alt="지티엠 피디렌자 크림·세럼, 콜라겐 세럼, 스노우필 라하샷, 멜라듀얼 데이 &amp; 나이트 크림" width="1920" height="721" fetchpriority="high">
+    </picture>
     <div class="a-hero-copy">
-      <p class="eyebrow">NEW &amp; RENEWAL 2026 · PDRÉNZA</p>
-      <h1>성분을 연구하고,<br>피부의 아름다움을 생각합니다.</h1>
-      <p class="lead">PDRN X NMN X Pearl Tomato®<br>피부 컨디션을 깨우는 첫 순간, 인텐시브 리쥬비네이션 세럼</p>
-      <div class="btns"><a class="btn" href="#line">피디렌자 라인 보기</a><a class="btn line" href="#philosophy">브랜드 이야기</a></div>
+      <div class="wrap">
+        <p class="eyebrow">NEW &amp; RENEWAL 2026</p>
+        <h1>성분을 연구하고,<br>피부의 아름다움을<br>생각합니다.</h1>
+        <p class="lead">PDRN X NMN X Pearl Tomato®<br>2026년 새롭게 선보이는 라인업</p>
+        <div class="btns"><a class="btn" href="#line">피디렌자 라인 보기</a><a class="btn line" href="#philosophy">브랜드 이야기</a></div>
+      </div>
     </div>
-    <figure class="a-hero-visual">
-      <img src="../assets/img/etc/hero-pdrenza-serum.webp" alt="{e(hero['name'])}" width="1200" height="1200" fetchpriority="high">
-      <figcaption><button type="button" data-preview="105">{e(hero['name'])}</button>{price_html(hero, 'price small')}</figcaption>
-    </figure>
+  </div>
+  <div class="a-stage-bar">
+    <div class="wrap"><span class="stage-label">이 장면의 제품</span>
+      <button type="button" data-preview="106">피디렌자 크림</button><button type="button" data-preview="105">피디렌자 세럼</button><button type="button" data-preview="107">콜라겐 세럼</button><button type="button" data-preview="108">스노우필 라하샷</button><button type="button" data-preview="110">멜라듀얼 데이 &amp; 나이트 크림</button>
+    </div>
   </div>
 </section>
 
@@ -286,10 +292,20 @@ def build_b():
         <a href="#find" data-jump="353">세럼 / 앰플</a><a href="#find" data-jump="354">크림</a><a href="#find" data-jump="355">마스크</a><a href="#ingredient" data-jump-ing="repair-pdrn">PDRN</a><a href="#ingredient" data-jump-ing="biotech-nmn">NMN</a>
       </div>
     </div>
-    <div class="b-hero-visual">
-      <button type="button" class="hv hv-1" data-preview="118"><img src="../assets/img/etc/pdrenza-mask.webp" alt="{e(PROD[118]['name'])}" width="1200" height="1200" fetchpriority="high"><span>{e(PROD[118]['name'])}</span></button>
-      <button type="button" class="hv hv-2" data-preview="107"><img src="../assets/img/etc/collagen.webp" alt="{e(PROD[107]['name'])}" width="1000" height="1000"><span>{e(PROD[107]['name'])}</span></button>
-      <button type="button" class="hv hv-3" data-preview="109"><img src="../assets/img/etc/snowpeel-kit.webp" alt="{e(PROD[109]['name'])}" width="1200" height="1200"><span>{e(PROD[109]['name'])}</span></button>
+    <div class="b-hero-slides" aria-roledescription="carousel" aria-label="추천 제품">
+      <div class="hs-track">
+        <figure class="hs-slide is-on" aria-roledescription="slide" aria-label="1 / 2">
+          <img src="../assets/img/etc/hero-b-pepticule.webp" alt="펩티큘 앰플을 바르는 모델" width="1200" height="715" fetchpriority="high">
+          <figcaption><span class="hs-tag">PEPTICULE</span><span class="hs-title">고농축 펩타이드 x 4세대 식물성 PDRN 스피큘</span>
+            <span class="hs-links"><button type="button" data-preview="91">펩티큘 앰플</button><button type="button" data-preview="90">펩티큘 골드 크림</button></span></figcaption>
+        </figure>
+        <figure class="hs-slide" aria-roledescription="slide" aria-label="2 / 2">
+          <img src="../assets/img/etc/hero-b-lineup.webp" alt="2026 신제품 라인업: 피디렌자 크림·세럼, 콜라겐 세럼, 스노우필 라하샷, 멜라듀얼 데이 &amp; 나이트 크림" width="1037" height="721" loading="lazy">
+          <figcaption><span class="hs-tag">2026 NEW 라인업</span><span class="hs-title">피부 컨디션부터 톤·탄력·모공까지</span>
+            <span class="hs-links"><button type="button" data-preview="105">피디렌자 세럼</button><button type="button" data-preview="107">콜라겐 세럼</button><button type="button" data-preview="110">멜라듀얼</button><button type="button" data-preview="108">스노우필</button></span></figcaption>
+        </figure>
+      </div>
+      <div class="hs-ctrl"><button type="button" class="hs-dot is-on" aria-label="1번 장면 보기"></button><button type="button" class="hs-dot" aria-label="2번 장면 보기"></button><button type="button" class="hs-pause" aria-label="자동 넘김 멈춤">Ⅱ</button></div>
     </div>
   </div>
 </section>
