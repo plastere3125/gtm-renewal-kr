@@ -666,6 +666,114 @@
   ]
  },
  {
+  "file": "hero/lineup-pc.webp",
+  "source": "https://cdn.imweb.me/thumbnail/20260206/e0b14e43deab3.jpg",
+  "use": "히어로 배너(PC) · 2026 NEW 라인업",
+  "size": [
+   1905,
+   715
+  ]
+ },
+ {
+  "file": "hero/lineup-m.webp",
+  "source": "https://cdn.imweb.me/thumbnail/20260206/6531bb492b107.jpg",
+  "use": "히어로 배너(모바일) · 2026 NEW 라인업",
+  "size": [
+   1000,
+   1000
+  ]
+ },
+ {
+  "file": "hero/pepticule-pc.webp",
+  "source": "https://cdn.imweb.me/thumbnail/20250911/29e0d26cf682f.png",
+  "use": "히어로 배너(PC) · 펩티큘 앰플·크림",
+  "size": [
+   1905,
+   715
+  ]
+ },
+ {
+  "file": "hero/pepticule-m.webp",
+  "source": "https://cdn.imweb.me/thumbnail/20250911/96ae8337f68ac.png",
+  "use": "히어로 배너(모바일) · 펩티큘 앰플·크림",
+  "size": [
+   1000,
+   1000
+  ]
+ },
+ {
+  "file": "hero/cellcare-pc.webp",
+  "source": "https://cdn.imweb.me/thumbnail/20250908/4d04fab0ab604.png",
+  "use": "히어로 배너(PC) · 골드셀·멜라셀",
+  "size": [
+   1905,
+   715
+  ]
+ },
+ {
+  "file": "hero/cellcare-m.webp",
+  "source": "https://cdn.imweb.me/thumbnail/20250908/b8136b4f636e0.png",
+  "use": "히어로 배너(모바일) · 골드셀·멜라셀",
+  "size": [
+   1000,
+   1000
+  ]
+ },
+ {
+  "file": "hero/slimline-pc.webp",
+  "source": "https://cdn.imweb.me/thumbnail/20250711/fd00a945dd191.jpg",
+  "use": "히어로 배너(PC) · 슬림라인",
+  "size": [
+   1905,
+   715
+  ]
+ },
+ {
+  "file": "hero/slimline-m.webp",
+  "source": "https://cdn.imweb.me/thumbnail/20250908/94e8bb22a93ef.jpg",
+  "use": "히어로 배너(모바일) · 슬림라인",
+  "size": [
+   1000,
+   1000
+  ]
+ },
+ {
+  "file": "hero/exoshine-pc.webp",
+  "source": "https://cdn.imweb.me/thumbnail/20250725/c15a47a814886.jpg",
+  "use": "히어로 배너(PC) · 엑소샤인",
+  "size": [
+   1905,
+   715
+  ]
+ },
+ {
+  "file": "hero/exoshine-m.webp",
+  "source": "https://cdn.imweb.me/thumbnail/20250711/8da22b0be0edb.jpg",
+  "use": "히어로 배너(모바일) · 엑소샤인",
+  "size": [
+   1000,
+   1000
+  ]
+ },
+ {
+  "file": "hero/motion-pc.mp4 (+.webp 포스터)",
+  "source": "https://cdn.imweb.me/thumbnail/20250904/1b0031214a00f.gif",
+  "use": "히어로 영상 장면(PC) · 움직이는 GIF 배너를 MP4로 변환",
+  "size": [
+   1905,
+   715
+  ]
+ },
+ {
+  "file": "hero/motion-m.mp4 (+.webp 포스터)",
+  "source": "https://cdn.imweb.me/thumbnail/20250910/0a91c7c06adbc.gif",
+  "use": "히어로 영상 장면(모바일) · 움직이는 GIF 배너를 MP4로 변환",
+  "size": [
+   1000,
+   1000
+  ]
+ },
+ {
   "file": "etc/logo.png",
   "source": "https://cdn.imweb.me/thumbnail/20260730/ececb0496cdef.png",
   "use": "로고(헤더·푸터)",

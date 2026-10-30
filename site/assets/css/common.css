@@ -177,3 +177,51 @@ body.lock { overflow: hidden; }
   .concept-bar { left: 50%; transform: translateX(-50%); bottom: 12px; font-size: 12px; white-space: nowrap; }
   .concept-bar .cb-now { max-width: 120px; overflow: hidden; text-overflow: ellipsis; }
 }
+
+/* 히어로 롤링 배너(공통). fade = 전폭 겹침 전환(B안), peek = 가운데 배너 + 양옆 미리보기(A안) */
+.hero { position: relative; background: var(--hero-bg, #f6efea); }
+.hero-viewport { position: relative; overflow: hidden; }
+.hero-media { display: block; width: 100%; padding: 0; text-align: left; }
+.hero-media img, .hero-media video { width: 100%; height: auto; aspect-ratio: 1905 / 715; object-fit: cover; display: block; }
+.hero-media .hv-m { display: none; }
+.hero-fade .hero-track { display: grid; }
+.hero-fade .hero-slide { grid-area: 1 / 1; opacity: 0; visibility: hidden; transition: opacity 0.9s ease, visibility 0.9s; }
+.hero-fade .hero-slide.is-on { opacity: 1; visibility: visible; }
+.hero-peek .hero-viewport { padding: 28px 0 0; }
+.hero-peek .hero-track { display: flex; gap: 20px; transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); will-change: transform; }
+.hero-peek .hero-slide { flex: 0 0 min(84vw, 1520px); opacity: 0.35; transition: opacity 0.8s ease; }
+.hero-peek .hero-slide.is-on { opacity: 1; }
+.hero-peek .hero-media img, .hero-peek .hero-media video { border-radius: 6px; }
+.hero-ui-inner { display: flex; align-items: center; gap: 24px; min-height: 64px; }
+.hero-count { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.hero-count b { color: var(--ink); }
+.hero-label { margin-left: 10px; color: var(--ink); font-weight: 500; }
+.hero-dots { flex: 1; display: flex; gap: 6px; }
+.hero-dot { flex: 1; max-width: 72px; height: 32px; display: flex; align-items: center; }
+.hero-dot span { display: block; width: 100%; height: 2px; background: var(--line); position: relative; overflow: hidden; }
+.hero-dot.is-on span::after { content: ""; position: absolute; inset: 0; background: var(--ink); transform-origin: left; animation: heroBar var(--hero-dur, 5s) linear forwards; }
+.hero.paused .hero-dot.is-on span::after, .hero.static .hero-dot.is-on span::after { animation: none; }
+@keyframes heroBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.hero-btns { display: flex; gap: 6px; }
+.hero-btns button { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: #fff; font-size: 20px; line-height: 1; }
+.hero-btns .hero-pause { font-size: 11px; font-weight: 700; }
+.hero-btns button:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+.hero-fade .hero-ui { position: absolute; left: 0; right: 0; bottom: 18px; pointer-events: none; }
+.hero-fade .hero-ui-inner > * { pointer-events: auto; }
+.hero-fade .hero-ui-inner { background: rgba(255, 255, 255, 0.86); backdrop-filter: blur(8px); border-radius: 999px; padding: 0 8px 0 22px; max-width: 640px; margin-left: max(20px, calc((100vw - 1280px) / 2 + 40px)); }
+.hero-fade .hero-btns button { border: 0; background: transparent; }
+@media (max-width: 900px) {
+  .hero-media img, .hero-media video { aspect-ratio: 1 / 1; }
+  .hero-media .hv-pc { display: none; }
+  .hero-media .hv-m { display: block; }
+  .hero-peek .hero-viewport { padding: 0; }
+  .hero-peek .hero-track { gap: 0; }
+  .hero-peek .hero-slide { flex-basis: 100vw; opacity: 1; }
+  .hero-peek .hero-media img, .hero-peek .hero-media video { border-radius: 0; }
+  .hero-ui-inner { gap: 12px; min-height: 56px; }
+  .hero-label { display: none; }
+  .hero-dot { max-width: 40px; }
+  .hero-btns .hero-prev, .hero-btns .hero-next { display: none; }
+  .hero-fade .hero-ui { position: static; }
+  .hero-fade .hero-ui-inner { border-radius: 0; margin: 0; padding: 0 12px 0 20px; max-width: none; background: #fff; }
+}

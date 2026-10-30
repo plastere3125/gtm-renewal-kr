@@ -86,27 +86,71 @@
     if (next) next.addEventListener("click", function () { sl.scrollBy({ left: step(), behavior: "smooth" }); });
   });
 
-  // B안 히어로 장면 전환(6초 자동, 멈춤 가능, 동작 줄이기 설정 존중)
-  document.querySelectorAll(".b-hero-slides").forEach(function (box) {
-    var slides = box.querySelectorAll(".hs-slide");
-    var dots = box.querySelectorAll(".hs-dot");
-    var pause = box.querySelector(".hs-pause");
-    var cur = 0, timer = null;
+  // 히어로 롤링 배너: 이미지 5초, 영상 장면은 영상 길이만큼. 멈춤·이전·다음·막대 선택, 동작 줄이기 설정 존중
+  document.querySelectorAll(".hero").forEach(function (hero) {
+    var mode = hero.dataset.mode;
+    var track = hero.querySelector(".hero-track");
+    var slides = Array.prototype.slice.call(hero.querySelectorAll(".hero-slide"));
+    var dots = hero.querySelectorAll(".hero-dot");
+    var cur = 0, timer = null, paused = false;
+    var labels = window.GTM_HERO || [];
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    function show(n) {
-      cur = (n + slides.length) % slides.length;
-      slides.forEach(function (s, i) { s.classList.toggle("is-on", i === cur); s.setAttribute("aria-hidden", String(i !== cur)); });
-      dots.forEach(function (d, i) { d.classList.toggle("is-on", i === cur); d.setAttribute("aria-current", String(i === cur)); });
+    var curEl = hero.querySelector(".hero-cur"), labelEl = hero.querySelector(".hero-label"), pauseBtn = hero.querySelector(".hero-pause");
+    function video(slide) {
+      var vs = slide.querySelectorAll("video");
+      for (var i = 0; i < vs.length; i++) if (vs[i].offsetParent !== null) return vs[i];
+      return null;
     }
-    function play() { stop(); timer = setInterval(function () { show(cur + 1); }, 6000); pause.textContent = "Ⅱ"; pause.setAttribute("aria-label", "자동 넘김 멈춤"); }
-    function stop() { if (timer) clearInterval(timer); timer = null; }
-    dots.forEach(function (d, i) { d.addEventListener("click", function () { show(i); if (timer) play(); }); });
-    pause.addEventListener("click", function () {
-      if (timer) { stop(); pause.textContent = "▶"; pause.setAttribute("aria-label", "자동 넘김 시작"); } else play();
-    });
-    box.addEventListener("focusin", stop);
-    show(0);
-    if (!reduce) play(); else { pause.textContent = "▶"; pause.setAttribute("aria-label", "자동 넘김 시작"); }
+    function place() {
+      if (mode !== "peek") return;
+      var s = slides[cur], vw = hero.querySelector(".hero-viewport").clientWidth;
+      track.style.transform = "translateX(" + (vw / 2 - (s.offsetLeft + s.offsetWidth / 2)) + "px)";
+    }
+    function schedule() {
+      clearTimeout(timer);
+      if (paused) return;
+      var v = video(slides[cur]);
+      var dur = v && v.duration && isFinite(v.duration) ? Math.max(v.duration, 4) * 1000 : 5000;
+      hero.style.setProperty("--hero-dur", dur / 1000 + "s");
+      timer = setTimeout(function () { go(cur + 1); }, dur);
+    }
+    function go(n) {
+      cur = (n + slides.length) % slides.length;
+      slides.forEach(function (s, i) {
+        var on = i === cur;
+        s.classList.toggle("is-on", on);
+        s.setAttribute("aria-hidden", String(!on));
+        s.querySelectorAll("button").forEach(function (b) { b.tabIndex = on ? 0 : -1; });
+        s.querySelectorAll("video").forEach(function (v) { if (on && !paused) { v.currentTime = 0; var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause(); });
+      });
+      dots.forEach(function (d, i) {
+        d.classList.toggle("is-on", i === cur);
+        d.setAttribute("aria-current", String(i === cur));
+        var sp = d.querySelector("span"); sp.replaceWith(sp.cloneNode(true)); // 진행 막대 다시 시작
+      });
+      if (curEl) curEl.textContent = String(cur + 1).padStart(2, "0");
+      if (labelEl) labelEl.textContent = labels[cur] || "";
+      place();
+      schedule();
+    }
+    function setPaused(p) {
+      paused = p;
+      hero.classList.toggle("paused", p);
+      pauseBtn.textContent = p ? "▶" : "Ⅱ";
+      pauseBtn.setAttribute("aria-label", p ? "자동 넘김 시작" : "자동 넘김 멈춤");
+      var v = video(slides[cur]);
+      if (v) { if (p) v.pause(); else { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } }
+      if (p) clearTimeout(timer); else schedule();
+    }
+    hero.querySelector(".hero-prev").addEventListener("click", function () { go(cur - 1); });
+    hero.querySelector(".hero-next").addEventListener("click", function () { go(cur + 1); });
+    pauseBtn.addEventListener("click", function () { setPaused(!paused); });
+    dots.forEach(function (d, i) { d.addEventListener("click", function () { go(i); }); });
+    slides.forEach(function (s, i) { s.addEventListener("click", function (ev) { if (mode === "peek" && i !== cur) { ev.preventDefault(); ev.stopPropagation(); go(i); } }, true); });
+    window.addEventListener("resize", place);
+    hero.querySelectorAll("video").forEach(function (v) { v.addEventListener("loadedmetadata", function () { if (slides[cur].contains(v)) schedule(); }); });
+    if (reduce) { paused = true; hero.classList.add("paused"); pauseBtn.textContent = "▶"; pauseBtn.setAttribute("aria-label", "자동 넘김 시작"); }
+    go(0);
   });
 
   // 상품 미리보기

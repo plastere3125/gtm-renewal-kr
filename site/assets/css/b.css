@@ -12,31 +12,16 @@
 .b-head p:not(.eyebrow) { margin-top: 10px; color: var(--muted); }
 .b-head.row { display: flex; justify-content: space-between; align-items: flex-end; }
 
-/* 히어로: 카피와 제품을 나란히 둔 분할형 */
-.b-hero { padding: 0 !important; }
-.b-hero-grid { display: grid; grid-template-columns: 0.9fr 1.25fr; height: min(calc(100vh - var(--header-h)), 760px); min-height: 600px; }
-.b-hero-copy { background: var(--soft); padding: 64px 56px 64px max(40px, calc((100vw - 1280px) / 2 + 40px)); display: flex; flex-direction: column; justify-content: center; }
-.b-hero-copy h1 { margin-top: 22px; font-size: 50px; font-weight: 700; letter-spacing: -0.05em; line-height: 1.3; }
-.b-hero-copy .lead { margin-top: 22px; color: var(--muted); font-size: 17px; }
-.b-hero-chips { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+/* 히어로 아래 소개 띠 */
+.concept-b { --hero-bg: #f7e9e8; }
+.concept-b main > section.hero { padding: 0; }
+.b-intro { background: var(--soft); padding: 64px 0 !important; }
+.b-intro-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: end; }
+.b-intro h1 { margin-top: 14px; font-size: 44px; font-weight: 700; letter-spacing: -0.05em; line-height: 1.28; }
+.b-intro .lead { color: var(--muted); font-size: 16.5px; }
+.b-hero-chips { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px; }
 .b-hero-chips a { min-height: 44px; display: inline-flex; align-items: center; padding: 0 18px; border-radius: 999px; background: #fff; font-size: 14.5px; font-weight: 500; }
 .b-hero-chips a:hover { background: var(--ink); color: #fff; }
-.b-hero-slides { position: relative; overflow: hidden; background: #f6dfe0; }
-.hs-track, .hs-slide { position: absolute; inset: 0; }
-.hs-slide { opacity: 0; visibility: hidden; transition: opacity 0.8s ease, visibility 0.8s; }
-.hs-slide.is-on { opacity: 1; visibility: visible; }
-.hs-slide img { width: 100%; height: 100%; object-fit: cover; object-position: right center; }
-.hs-slide figcaption { position: absolute; left: 32px; right: 32px; bottom: 76px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
-.hs-tag { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; background: var(--ink); color: #fff; padding: 6px 12px; border-radius: 999px; }
-.hs-title { font-size: 22px; font-weight: 700; letter-spacing: -0.03em; background: rgba(255, 255, 255, 0.9); padding: 8px 14px; border-radius: 10px; }
-.hs-links { display: flex; flex-wrap: wrap; gap: 6px; }
-.hs-links button { min-height: 36px; padding: 0 14px; border-radius: 999px; background: rgba(255, 255, 255, 0.9); font-size: 13px; font-weight: 500; }
-.hs-links button:hover { background: var(--pink-deep); color: #fff; }
-.hs-ctrl { position: absolute; left: 32px; bottom: 28px; display: flex; gap: 8px; align-items: center; }
-.hs-dot { width: 34px; height: 34px; position: relative; }
-.hs-dot::after { content: ""; position: absolute; inset: 14px 3px; border-radius: 4px; background: rgba(255, 255, 255, 0.7); }
-.hs-dot.is-on::after { background: var(--ink); }
-.hs-pause { width: 32px; height: 32px; border-radius: 50%; background: rgba(255, 255, 255, 0.85); font-size: 11px; font-weight: 700; }
 
 /* 제품군 바로가기 */
 .sc-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 12px; }
@@ -103,17 +88,10 @@
   .concept-b section { padding: 72px 0; }
   .b-head h2 { font-size: 26px; }
   .b-head { margin-bottom: 26px; }
-  .b-hero-grid { grid-template-columns: 1fr; min-height: 0; max-height: none; }
-  .b-hero-copy { padding: 44px 20px 40px; }
-  .b-hero-copy h1 { font-size: 30px; margin-top: 16px; }
-  .b-hero-copy .lead { font-size: 15px; }
-  .b-hero-chips { margin-top: 26px; }
-  .b-hero-grid { height: auto; min-height: 0; }
-  .b-hero-slides { aspect-ratio: 1037 / 900; }
-  .hs-slide figcaption { left: 16px; right: 16px; bottom: 58px; }
-  .hs-title { font-size: 15px; padding: 6px 10px; }
-  .hs-links button { min-height: 34px; font-size: 12px; padding: 0 10px; }
-  .hs-ctrl { left: 16px; bottom: 16px; }
+  .b-intro { padding: 40px 0 !important; }
+  .b-intro-grid { grid-template-columns: 1fr; gap: 16px; }
+  .b-intro h1 { font-size: 28px; }
+  .b-intro .lead { font-size: 15px; }
   .sc-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
   .sc-tile { padding: 10px 4px 12px; border-radius: 14px; }
   .sc-name { font-size: 12.5px; }

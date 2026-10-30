@@ -27,7 +27,7 @@ with sync_playwright() as p:
             info = pg.evaluate("""() => ({
               broken: [...document.images].filter(i => i.getAttribute('src') && i.complete && i.naturalWidth === 0).map(i => i.src),
               overflow: document.documentElement.scrollWidth - window.innerWidth,
-              wide: [...document.querySelectorAll('body *')].filter(el => { const r = el.getBoundingClientRect(); return r.right > window.innerWidth + 1 && getComputedStyle(el).position !== 'fixed' && !el.closest('.row-scroll,.slider,.ln-tabs,.drawer,.tabs') }).slice(0, 5).map(el => el.className || el.tagName),
+              wide: [...document.querySelectorAll('body *')].filter(el => { const r = el.getBoundingClientRect(); return r.right > window.innerWidth + 1 && getComputedStyle(el).position !== 'fixed' && !el.closest('.row-scroll,.slider,.ln-tabs,.drawer,.tabs,.hero-viewport') }).slice(0, 5).map(el => el.className || el.tagName),
               smallTargets: [...document.querySelectorAll('a,button')].filter(el => { const r = el.getBoundingClientRect(); return r.width > 0 && (r.height < 32 || r.width < 32) && !el.closest('.site-footer,.foot-links,.nav-sub') && !el.classList.contains('text-link') }).slice(0, 8).map(el => (el.className || el.tagName) + ':' + (el.innerText || '').slice(0, 12)),
               font: getComputedStyle(document.body).fontFamily.slice(0, 30),
               links: [...document.querySelectorAll('a[href]')].map(a => a.href)
@@ -45,7 +45,7 @@ with sync_playwright() as p:
                 pg.screenshot(path=f"{OUT}/{path.strip('/')}_mobile_menu.png")
                 opened = pg.evaluate("!document.getElementById('drawer').hidden && !document.getElementById('m-sub-1').hidden")
                 pg.click(".drawer-close"); closed = pg.evaluate("document.getElementById('drawer').hidden")
-                pg.click("[data-preview] >> nth=0"); pg.wait_for_timeout(300)
+                pg.click(".card-btn >> nth=0"); pg.wait_for_timeout(300)
                 pv = pg.evaluate("!document.getElementById('preview').hidden && document.getElementById('pv-name').textContent")
                 pg.screenshot(path=f"{OUT}/{path.strip('/')}_mobile_preview.png")
                 pg.keyboard.press("Escape")

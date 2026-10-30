@@ -53,6 +53,23 @@ def main():
         im.thumbnail((1905, 1905), Image.LANCZOS)
         im.save(IMG / "etc" / f"{key}.webp", "WEBP", quality=84, method=6)
         sources.append({"file": f"etc/{key}.webp", "source": json_src(src), "use": use, "size": im.size})
+    # 히어로 롤링 배너(국문 홈 메인 배너 원본: PC 가로형 + 모바일 정사각형 짝). 운영에서는 클라이언트가 올리는 배너로 교체
+    (IMG / "hero").mkdir(exist_ok=True)
+    for key, pc, mo, use in [("lineup", "005", "012", "2026 NEW 라인업"), ("pepticule", "006", "014", "펩티큘 앰플·크림"),
+                             ("cellcare", "007", "015", "골드셀·멜라셀"), ("slimline", "009", "016", "슬림라인"), ("exoshine", "010", "019", "엑소샤인")]:
+        for kind, pre, side in (("pc", pc, 1905), ("m", mo, 1000)):
+            size = webp(home(pre), IMG / "hero" / f"{key}-{kind}.webp", side, 84)
+            sources.append({"file": f"hero/{key}-{kind}.webp", "source": json_src(home(pre)), "use": f"히어로 배너({'PC' if kind == 'pc' else '모바일'}) · {use}", "size": size})
+    # 움직이는 배너(GIF) → MP4 영상 + 첫 장면 포스터
+    import subprocess
+    for kind, pre in (("pc", "004"), ("m", "013")):
+        src = home(pre)
+        out = IMG / "hero" / f"motion-{kind}.mp4"
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", src, "-movflags", "+faststart", "-pix_fmt", "yuv420p", "-vf", "scale='min(1600,iw)':-2" if kind == "pc" else "scale=720:-2",
+                        "-c:v", "libx264", "-crf", "31", "-preset", "slow", "-an", str(out)], check=True)
+        im = Image.open(src); im.seek(0); im = im.convert("RGB")
+        im.save(IMG / "hero" / f"motion-{kind}.webp", "WEBP", quality=82)
+        sources.append({"file": f"hero/motion-{kind}.mp4 (+.webp 포스터)", "source": json_src(src), "use": f"히어로 영상 장면({'PC' if kind == 'pc' else '모바일'}) · 움직이는 GIF 배너를 MP4로 변환", "size": im.size})
     # 로고(투명 PNG), 전시 포스터, 피부 자극 시험 팝업
     logo = Image.open(home("131")).convert("RGBA")
     logo = logo.crop(logo.getchannel("A").getbbox())

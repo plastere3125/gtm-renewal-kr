@@ -121,6 +121,45 @@ def modal():
 </div>"""
 
 
+
+# 히어로 롤링 배너: 국문 홈 메인 배너(PC 가로형 + 모바일 정사각형)와 움직이는 장면(영상). 운영에서는 클라이언트 배너로 교체
+HERO = [
+    {"key": "motion", "label": "GTM 코스메틱스", "video": True},
+    {"key": "lineup", "label": "2026 NEW 라인업", "idx": 105},
+    {"key": "pepticule", "label": "펩티큘 앰플 · 크림", "idx": 91},
+    {"key": "cellcare", "label": "골드셀 · 멜라셀", "idx": 111},
+    {"key": "slimline", "label": "슬림라인", "idx": 94},
+    {"key": "exoshine", "label": "엑소샤인", "idx": 53},
+]
+
+
+def hero_slider(mode):
+    n = len(HERO)
+    slides = []
+    for i, h in enumerate(HERO):
+        lab = f'{i + 1} / {n}'
+        if h.get("video"):
+            media = ('<video class="hv-pc" muted playsinline loop preload="metadata" poster="../assets/img/hero/motion-pc.webp"><source src="../assets/img/hero/motion-pc.mp4" type="video/mp4"></video>'
+                     '<video class="hv-m" muted playsinline loop preload="none" poster="../assets/img/hero/motion-m.webp"><source src="../assets/img/hero/motion-m.mp4" type="video/mp4"></video>')
+            inner = f'<div class="hero-media">{media}</div>'
+        else:
+            pic = (f'<picture><source media="(max-width: 900px)" srcset="../assets/img/hero/{h["key"]}-m.webp">'
+                   f'<img src="../assets/img/hero/{h["key"]}-pc.webp" alt="{e(h["label"])} 배너" width="1905" height="715" {"fetchpriority=" + chr(34) + "high" + chr(34) if i == 1 else "loading=" + chr(34) + "lazy" + chr(34)}></picture>')
+            inner = f'<button type="button" class="hero-media" data-preview="{h["idx"]}" aria-label="{e(h["label"])} 제품 보기">{pic}</button>'
+        slides.append(f'<div class="hero-slide{" is-on" if i == 0 else ""}" role="group" aria-roledescription="slide" aria-label="{lab} · {e(h["label"])}" data-video="{1 if h.get("video") else 0}">{inner}</div>')
+    dots = "".join(f'<button type="button" class="hero-dot{" is-on" if i == 0 else ""}" aria-label="{i + 1}번 배너: {e(h["label"])}"><span></span></button>' for i, h in enumerate(HERO))
+    return f"""
+<section class="hero hero-{mode}" aria-roledescription="carousel" aria-label="메인 배너" data-mode="{mode}">
+  <div class="hero-viewport"><div class="hero-track">{''.join(slides)}</div></div>
+  <div class="hero-ui">
+    <div class="wrap hero-ui-inner">
+      <p class="hero-count"><b class="hero-cur">01</b> / {n:02d} <span class="hero-label">{e(HERO[0]['label'])}</span></p>
+      <div class="hero-dots">{dots}</div>
+      <div class="hero-btns"><button type="button" class="hero-prev" aria-label="이전 배너">‹</button><button type="button" class="hero-pause" aria-label="자동 넘김 멈춤">Ⅱ</button><button type="button" class="hero-next" aria-label="다음 배너">›</button></div>
+    </div>
+  </div>
+</section>"""
+
 def page(concept, title, body):
     data = {str(k): {"name": v["name"], "img": v["img"], "desc": summary(k), "price": v["price"], "sale": v["sale"], "pct": v["pct"],
                      "asking": v["asking"], "url": v["url"], "cats": [CATS[c]["name"] for c in v["cats"] if c not in ("137", "361")][:3]}
@@ -147,7 +186,7 @@ def page(concept, title, body):
 {footer()}
 {modal()}
 {concept_bar(concept)}
-<script>window.GTM_PRODUCTS={json.dumps(data, ensure_ascii=False)};</script>
+<script>window.GTM_PRODUCTS={json.dumps(data, ensure_ascii=False)};window.GTM_HERO={json.dumps([h["label"] for h in HERO], ensure_ascii=False)};</script>
 <script src="../assets/js/common.js" defer></script>
 </body>
 </html>"""
@@ -155,101 +194,92 @@ def page(concept, title, body):
 
 # ───────────────────────── A안: 피부 과학의 정제된 아름다움
 def build_a():
-    line = [105, 106, 118, 104]
     it = S["irritation_test"]
-    rows = "".join(f"<tr><th scope='row'>{e(n)}</th><td>{v}</td><td>비자극 (Excellent)</td></tr>" for n, v in it["results"])
-    ingr = [i for i in S["ingredients"] if i["key"] in ("repair-pdrn", "biotech-nmn", "pearl-tomato")]
-    ingr_html = "".join(
-        f'<li><p class="ing-no">0{n}</p><h3>{e(i["sub"])}</h3><p class="ing-kr">{e(i["title"])}</p><p class="ing-text">{e(i["text"])}</p>'
-        f'{ext(CATS[i["cat"]]["name"] and "/" + i["cat"], i["catLabel"] + " 제품 " + str(len(CATS[i["cat"]]["idx"])) + "종", "text-link")}</li>'
-        for n, i in enumerate(ingr, 1))
-    tabs = [("353", "세럼 / 앰플"), ("354", "크림"), ("355", "마스크"), ("352", "토너"), ("356", "클렌징"), ("181", "스킨 부스터")]
-    tab_btns = "".join(f'<button type="button" role="tab" id="tab-{c}" aria-controls="panel-{c}" aria-selected="{"true" if i == 0 else "false"}" tabindex="{0 if i == 0 else -1}">{e(n)} <small>{len(CATS[c]["idx"])}</small></button>' for i, (c, n) in enumerate(tabs))
-    panels = "".join(f'<ul class="grid4" role="tabpanel" id="panel-{c}" aria-labelledby="tab-{c}" {"" if i == 0 else "hidden"}>' + "".join(card(x) for x in CATS[c]["idx"][:8]) + "</ul>" for i, (c, n) in enumerate(tabs))
-    news = S["news"]
-    news_html = "".join(
-        f'<li class="news-item{" has-img" if n.get("img") else ""}">' + (f'<img src="../assets/img/{n["img"]}" alt="{e(n["title"])} 포스터" loading="lazy">' if n.get("img") else "")
-        + f'<p class="news-date">{e(n["date"])}</p><h3>{e(n["title"])}</h3><p class="news-place">{e(n["place"])}</p></li>' for n in news)
-    body = f"""
-<section class="a-hero">
-  <div class="a-hero-stage">
-    <picture>
-      <source media="(max-width: 900px)" srcset="../assets/img/etc/hero-a-stage-m.webp">
-      <img src="../assets/img/etc/hero-a-banner.webp" alt="지티엠 피디렌자 크림·세럼, 콜라겐 세럼, 스노우필 라하샷, 멜라듀얼 데이 &amp; 나이트 크림" width="1920" height="721" fetchpriority="high">
-    </picture>
-    <div class="a-hero-copy">
-      <div class="wrap">
-        <p class="eyebrow">NEW &amp; RENEWAL 2026</p>
-        <h1>성분을 연구하고,<br>피부의 아름다움을<br>생각합니다.</h1>
-        <p class="lead">PDRN X NMN X Pearl Tomato®<br>2026년 새롭게 선보이는 라인업</p>
-        <div class="btns"><a class="btn" href="#line">피디렌자 라인 보기</a><a class="btn line" href="#philosophy">브랜드 이야기</a></div>
-      </div>
-    </div>
-  </div>
-  <div class="a-stage-bar">
-    <div class="wrap"><span class="stage-label">이 장면의 제품</span>
-      <button type="button" data-preview="106">피디렌자 크림</button><button type="button" data-preview="105">피디렌자 세럼</button><button type="button" data-preview="107">콜라겐 세럼</button><button type="button" data-preview="108">스노우필 라하샷</button><button type="button" data-preview="110">멜라듀얼 데이 &amp; 나이트 크림</button>
-    </div>
-  </div>
-</section>
+    rows = "".join(f"<tr><th scope='row'>{e(n)}</th><td>{v}</td><td>비자극</td></tr>" for n, v in it["results"])
+    skincare = [105, 107, 91, 106, 90, 118, 22, 16]
+    tabs = [("new", "NEW & RENEWAL 2026", [105, 106, 107, 118, 110, 108, 104, 119], "/361"),
+            ("skin", "스킨케어", skincare, "/137"),
+            ("booster", "스킨 부스터", CATS["181"]["idx"][:8], "/181"),
+            ("nmn", "NMN LINE", CATS["394"]["idx"][:8], "/394")]
+    tab_btns = "".join(f'<button type="button" role="tab" id="pt-{k}" aria-controls="pp-{k}" aria-selected="{"true" if i == 0 else "false"}" tabindex="{0 if i == 0 else -1}">{e(n)}</button>' for i, (k, n, _, _) in enumerate(tabs))
+    panels = "".join(f'<div role="tabpanel" id="pp-{k}" aria-labelledby="pt-{k}" {"" if i == 0 else "hidden"}><ul class="grid4">' + "".join(card(x) for x in ids) + f'</ul><p class="more">{ext(url, n + " 전체 보기", "text-link")}</p></div>' for i, (k, n, ids, url) in enumerate(tabs))
+    lines = [("피디렌자", "PDRÉNZA", "PDRN X NMN X Pearl Tomato®", 104, [105, 106, 118, 104]),
+             ("펩티큘", "PEPTICULE", "고농축 펩타이드 x 4세대 식물성 PDRN 스피큘", 91, [91, 90]),
+             ("밸런스", "BALANCE", "저자극 약산성 토너 · 세럼 · 크림 · 클렌징 젤", 22, [22, 19, 16, 21])]
+    line_html = "".join(
+        f'<li class="a-lc"><button type="button" class="a-lc-img" data-preview="{rep}" aria-label="{e(PROD[rep]["name"])} 보기"><img src="../assets/img/{PROD[rep]["img"]}" alt="{e(PROD[rep]["name"])}" loading="lazy" width="900" height="900"></button>'
+        f'<p class="a-lc-en">{e(en)}</p><h3>{e(kr)}</h3><p class="a-lc-lead">{e(lead)}</p>'
+        f'<ul class="a-lc-list">' + "".join(f'<li><button type="button" data-preview="{x}">{e(PROD[x]["name"].replace("지티엠 ", ""))}</button></li>' for x in ids) + "</ul></li>"
+        for kr, en, lead, rep, ids in lines)
+    sol_desc = {i["cat"]: i["text"] for i in S["ingredients"] if i["key"] != "patent"}
+    sols = [c["url"].strip("/") for c in S["nav"][3]["children"]]
+    sol_html = "".join(
+        f'<li><a href="{REAL}/{c}" target="_blank" rel="noopener"><span class="sol-no">{n:02d}</span><span class="sol-name">{e(CATS[c]["name"])}</span>'
+        f'<span class="sol-desc">{e(sol_desc.get(c, ""))}</span><span class="sol-thumbs">' + "".join(f'<img src="../assets/img/{PROD[x]["img"]}" alt="" loading="lazy">' for x in CATS[c]["idx"][:3]) + f'</span><span class="sol-count">{len(CATS[c]["idx"])}종</span></a></li>'
+        for n, c in enumerate(sols, 1))
+    rv = "".join(f'<li><p class="rv-prod">{e(r["product"])}</p><blockquote>{e(r["text"])}</blockquote><p class="rv-meta">{e(r["author"])} · {e(r["date"])}</p></li>' for r in S["reviews"])
+    news = "".join(f'<li><span class="nw-date">{e(x["date"])}</span><span class="nw-title">{e(x["title"])}</span><span class="nw-place">{e(x["place"])}</span></li>' for x in S["news"])
+    body = f"""{hero_slider('peek')}
 
-<section class="a-philosophy" id="philosophy">
-  <div class="wrap a-phil-grid">
-    <p class="eyebrow">BRAND</p>
+<section class="a-intro" id="philosophy">
+  <div class="wrap a-intro-grid">
     <div>
-      <p class="statement">순수한 성분, 과학적인 추출,<br>피부 본연의 빛을 되살리다.</p>
-      <ul class="link-rows">
-        <li>{ext('/34', '브랜드 스토리')}</li><li>{ext('/157', '히스토리 / 인증')}</li><li>{ext('/158', 'OEM / ODM')}</li><li>{ext('/159', '글로벌 비즈니스')}</li>
-      </ul>
+      <p class="eyebrow">GTM COSMETICS</p>
+      <h1>성분을 연구하고,<br>피부의 아름다움을 생각합니다.</h1>
+    </div>
+    <div class="a-intro-side">
+      <p class="statement">{e(S['brand']['statement'])}</p>
+      <dl class="a-facts">
+        <div><dt>국문 온라인몰 제품</dt><dd>{len(PROD)}<small>종</small></dd></div>
+        <div><dt>성분별 솔루션</dt><dd>{len(sols)}<small>가지</small></dd></div>
+        <div><dt>피부 일차자극 시험 비자극 판정</dt><dd>{len(it['results'])}<small>개 제품</small></dd></div>
+      </dl>
+      <p class="a-intro-links">{ext('/34', '브랜드 스토리', 'text-link')}{ext('/157', '히스토리 / 인증', 'text-link')}{ext('/158', 'OEM / ODM', 'text-link')}</p>
     </div>
   </div>
 </section>
 
-<section class="a-line" id="line">
+<section class="a-products" id="products">
   <div class="wrap">
-    <div class="sec-head"><div><p class="eyebrow">SIGNATURE LINE</p><h2>피디렌자</h2></div><p class="sec-lead">PDRN, NMN, 펄토마토® 세 가지 원료를 담은 2026 리뉴얼 라인입니다.</p></div>
-    <div class="a-line-grid">
-      <button type="button" class="a-line-feature" data-preview="118">
-        <img src="../assets/img/etc/pdrenza-mask.webp" alt="{e(PROD[118]['name'])}" loading="lazy" width="1200" height="1200">
-        <span class="feat-body"><span class="feat-name">{e(PROD[118]['name'])}</span><span class="feat-desc">{e(summary(118))}</span>{price_html(PROD[118])}</span>
-      </button>
-      <ul class="a-line-list">{''.join(card(x, show_desc=True) for x in [105, 106, 104])}</ul>
-    </div>
-  </div>
-</section>
-
-<section class="a-ingredient" id="ingredient">
-  <div class="wrap">
-    <div class="sec-head"><div><p class="eyebrow">INGREDIENT</p><h2>세 가지 원료 이야기</h2></div><p class="sec-lead">피디렌자 라인에 담긴 세 가지 원료를 소개합니다.</p></div>
-    <ol class="ing-list">{ingr_html}</ol>
-    <div class="a-test">
-      <div class="a-test-copy">
-        <p class="eyebrow">SAFETY</p>
-        <h3>{e(it['headline'])}</h3>
-        <p class="a-test-title">{e(it['title'])}</p>
-        <p>{e(it['body'])}</p>
-        <dl class="a-test-meta"><div><dt>시험기관</dt><dd>{e(it['institute'])}</dd></div><div><dt>시험기간</dt><dd>{e(it['period'])}</dd></div><div><dt>시험대상</dt><dd>{e(it['subjects'])}</dd></div></dl>
-      </div>
-      <div class="a-test-table">
-        <table><caption>인체 피부 일차자극 시험 결과 (9개 제품)</caption><thead><tr><th scope="col">제품명</th><th scope="col">피부 자극 지수</th><th scope="col">판정</th></tr></thead><tbody>{rows}</tbody></table>
-        <p class="note">※ {e(it['criteria'])}<br>※ {e(it['notice'])}</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="a-collection" id="collection">
-  <div class="wrap">
-    <div class="sec-head"><div><p class="eyebrow">COLLECTION</p><h2>제품 컬렉션</h2></div>{ext('/137', '제품 라인업 전체 보기', 'text-link')}</div>
-    <div class="tabs" role="tablist" aria-label="제품 분류">{tab_btns}</div>
+    <div class="sec-head"><div><p class="eyebrow">PRODUCTS</p><h2>GTM 코스메틱스 제품</h2></div><div class="tabs" role="tablist" aria-label="제품 분류">{tab_btns}</div></div>
     {panels}
   </div>
 </section>
 
-<section class="a-news" id="news">
+<section class="a-lines" id="line">
   <div class="wrap">
-    <div class="sec-head"><div><p class="eyebrow">NEWS</p><h2>브랜드 소식</h2></div>{ext('/68', '뉴스 전체 보기', 'text-link')}</div>
-    <ul class="news-list">{news_html}</ul>
+    <div class="sec-head"><div><p class="eyebrow">SIGNATURE LINES</p><h2>대표 라인</h2></div><p class="sec-lead">피부 고민과 루틴에 맞춰 이어 쓰는 GTM 코스메틱스의 라인입니다.</p></div>
+    <ul class="a-lc-grid">{line_html}</ul>
+  </div>
+</section>
+
+<section class="a-solution" id="ingredient">
+  <div class="wrap">
+    <div class="sec-head"><div><p class="eyebrow">INGREDIENT SOLUTIONS</p><h2>성분별 솔루션</h2></div>{ext('/280', '성분별 솔루션 전체 보기', 'text-link')}</div>
+    <ol class="sol-list">{sol_html}</ol>
+  </div>
+</section>
+
+<section class="a-safety" id="safety">
+  <div class="wrap a-safety-grid">
+    <div class="a-safety-copy">
+      <p class="eyebrow">SAFETY</p>
+      <h2>{e(it['headline'])}</h2>
+      <p class="a-safety-big">{len(it['results'])}개 제품 모두<br><b>비자극(Excellent)</b> 판정</p>
+      <p class="a-safety-body">{e(it['body'])}</p>
+      <dl class="a-test-meta"><div><dt>시험기관</dt><dd>{e(it['institute'])}</dd></div><div><dt>시험기간</dt><dd>{e(it['period'])}</dd></div><div><dt>시험대상</dt><dd>{e(it['subjects'])}</dd></div></dl>
+    </div>
+    <div class="a-test-table">
+      <table><caption>인체 피부 일차자극 시험 결과</caption><thead><tr><th scope="col">제품명</th><th scope="col">피부 자극 지수</th><th scope="col">판정</th></tr></thead><tbody>{rows}</tbody></table>
+      <p class="note">※ {e(it['criteria'])}<br>※ {e(it['notice'])}</p>
+    </div>
+  </div>
+</section>
+
+<section class="a-voice" id="news">
+  <div class="wrap a-voice-grid">
+    <div><div class="sec-head small"><div><p class="eyebrow">REVIEW</p><h2>구매평</h2></div></div><ul class="a-reviews">{rv}</ul></div>
+    <div><div class="sec-head small"><div><p class="eyebrow">NEWS</p><h2>브랜드 소식</h2></div>{ext('/68', '뉴스 전체 보기', 'text-link')}</div><ul class="a-news">{news}</ul></div>
   </div>
 </section>"""
     return page("a", "GTM 코스메틱스 | 성분을 연구하고, 피부의 아름다움을 생각합니다", body)
@@ -282,31 +312,13 @@ def build_b():
         f'<li class="review"><p class="rv-prod">{e(r["product"])}</p><blockquote>“{e(r["text"])}”</blockquote><p class="rv-meta">{e(r["author"])} · {e(r["date"])}</p></li>' for r in S["reviews"])
     news = "".join(f'<li><span class="nw-date">{e(n["date"])}</span><span class="nw-title">{e(n["title"])}</span><span class="nw-place">{e(n["place"])}</span></li>' for n in S["news"])
     body = f"""
-<section class="b-hero">
-  <div class="b-hero-grid">
-    <div class="b-hero-copy">
-      <p class="eyebrow">GTM 코스메틱스 · NEW &amp; RENEWAL 2026</p>
-      <h1>오늘의 피부를 위한,<br>나만의 케어를 만나보세요.</h1>
-      <p class="lead">토너부터 마스크, 스킨 부스터까지.<br>피부 고민과 루틴에 맞는 제품을 찾아보세요.</p>
-      <div class="b-hero-chips">
-        <a href="#find" data-jump="353">세럼 / 앰플</a><a href="#find" data-jump="354">크림</a><a href="#find" data-jump="355">마스크</a><a href="#ingredient" data-jump-ing="repair-pdrn">PDRN</a><a href="#ingredient" data-jump-ing="biotech-nmn">NMN</a>
-      </div>
-    </div>
-    <div class="b-hero-slides" aria-roledescription="carousel" aria-label="추천 제품">
-      <div class="hs-track">
-        <figure class="hs-slide is-on" aria-roledescription="slide" aria-label="1 / 2">
-          <img src="../assets/img/etc/hero-b-pepticule.webp" alt="펩티큘 앰플을 바르는 모델" width="1200" height="715" fetchpriority="high">
-          <figcaption><span class="hs-tag">PEPTICULE</span><span class="hs-title">고농축 펩타이드 x 4세대 식물성 PDRN 스피큘</span>
-            <span class="hs-links"><button type="button" data-preview="91">펩티큘 앰플</button><button type="button" data-preview="90">펩티큘 골드 크림</button></span></figcaption>
-        </figure>
-        <figure class="hs-slide" aria-roledescription="slide" aria-label="2 / 2">
-          <img src="../assets/img/etc/hero-b-lineup.webp" alt="2026 신제품 라인업: 피디렌자 크림·세럼, 콜라겐 세럼, 스노우필 라하샷, 멜라듀얼 데이 &amp; 나이트 크림" width="1037" height="721" loading="lazy">
-          <figcaption><span class="hs-tag">2026 NEW 라인업</span><span class="hs-title">피부 컨디션부터 톤·탄력·모공까지</span>
-            <span class="hs-links"><button type="button" data-preview="105">피디렌자 세럼</button><button type="button" data-preview="107">콜라겐 세럼</button><button type="button" data-preview="110">멜라듀얼</button><button type="button" data-preview="108">스노우필</button></span></figcaption>
-        </figure>
-      </div>
-      <div class="hs-ctrl"><button type="button" class="hs-dot is-on" aria-label="1번 장면 보기"></button><button type="button" class="hs-dot" aria-label="2번 장면 보기"></button><button type="button" class="hs-pause" aria-label="자동 넘김 멈춤">Ⅱ</button></div>
-    </div>
+{hero_slider('fade')}
+
+<section class="b-intro">
+  <div class="wrap b-intro-grid">
+    <div><p class="eyebrow">GTM 코스메틱스 · NEW &amp; RENEWAL 2026</p><h1>오늘의 피부를 위한,<br>나만의 케어를 만나보세요.</h1></div>
+    <div><p class="lead">토너부터 마스크, 스킨 부스터까지. 피부 고민과 루틴에 맞는 제품을 찾아보세요.</p>
+      <div class="b-hero-chips"><a href="#find" data-jump="353">세럼 / 앰플</a><a href="#find" data-jump="354">크림</a><a href="#find" data-jump="355">마스크</a><a href="#ingredient" data-jump-ing="repair-pdrn">PDRN</a><a href="#ingredient" data-jump-ing="biotech-nmn">NMN</a><a href="#lines">라인으로 고르기</a></div></div>
   </div>
 </section>
 
