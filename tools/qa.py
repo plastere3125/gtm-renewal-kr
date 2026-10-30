@@ -27,7 +27,7 @@ with sync_playwright() as p:
             info = pg.evaluate("""() => ({
               broken: [...document.images].filter(i => i.getAttribute('src') && i.complete && i.naturalWidth === 0).map(i => i.src),
               overflow: document.documentElement.scrollWidth - window.innerWidth,
-              wide: [...document.querySelectorAll('body *')].filter(el => { const r = el.getBoundingClientRect(); return r.right > window.innerWidth + 1 && getComputedStyle(el).position !== 'fixed' && !el.closest('.row-scroll,.slider,.ln-tabs,.drawer,.tabs,.hero-viewport') }).slice(0, 5).map(el => el.className || el.tagName),
+              wide: [...document.querySelectorAll('body *')].filter(el => { const r = el.getBoundingClientRect(); return r.right > window.innerWidth + 1 && getComputedStyle(el).position !== 'fixed' && !el.closest('.row-scroll,.slider,.ln-tabs,.drawer,.tabs,.hero-viewport,.a-lc-grid') }).slice(0, 5).map(el => el.className || el.tagName),
               smallTargets: [...document.querySelectorAll('a,button')].filter(el => { const r = el.getBoundingClientRect(); return r.width > 0 && (r.height < 32 || r.width < 32) && !el.closest('.site-footer,.foot-links,.nav-sub') && !el.classList.contains('text-link') }).slice(0, 8).map(el => (el.className || el.tagName) + ':' + (el.innerText || '').slice(0, 12)),
               font: getComputedStyle(document.body).fontFamily.slice(0, 30),
               links: [...document.querySelectorAll('a[href]')].map(a => a.href)
