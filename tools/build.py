@@ -203,14 +203,26 @@ def build_a():
             ("nmn", "NMN LINE", CATS["394"]["idx"][:8], "/394")]
     tab_btns = "".join(f'<button type="button" role="tab" id="pt-{k}" aria-controls="pp-{k}" aria-selected="{"true" if i == 0 else "false"}" tabindex="{0 if i == 0 else -1}">{e(n)}</button>' for i, (k, n, _, _) in enumerate(tabs))
     panels = "".join(f'<div role="tabpanel" id="pp-{k}" aria-labelledby="pt-{k}" {"" if i == 0 else "hidden"}><ul class="grid4">' + "".join(card(x) for x in ids) + f'</ul><p class="more">{ext(url, n + " 전체 보기", "text-link")}</p></div>' for i, (k, n, ids, url) in enumerate(tabs))
-    lines = [("피디렌자", "PDRÉNZA", "PDRN X NMN X Pearl Tomato®", 104, [105, 106, 118, 104]),
-             ("펩티큘", "PEPTICULE", "고농축 펩타이드 x 4세대 식물성 PDRN 스피큘", 91, [91, 90]),
-             ("밸런스", "BALANCE", "저자극 약산성 토너 · 세럼 · 크림 · 클렌징 젤", 22, [22, 19, 16, 21])]
-    line_html = "".join(
-        f'<li class="a-lc"><button type="button" class="a-lc-img" data-preview="{rep}" aria-label="{e(PROD[rep]["name"])} 보기"><img src="../assets/img/{PROD[rep]["img"]}" alt="{e(PROD[rep]["name"])}" loading="lazy" width="900" height="900"></button>'
-        f'<p class="a-lc-en">{e(en)}</p><h3>{e(kr)}</h3><p class="a-lc-lead">{e(lead)}</p>'
-        f'<ul class="a-lc-list">' + "".join(f'<li><button type="button" data-preview="{x}">{e(PROD[x]["name"].replace("지티엠 ", ""))}</button></li>' for x in ids) + "</ul></li>"
-        for kr, en, lead, rep, ids in lines)
+    def mini(x):
+        q = PROD[x]
+        return (f'<li><button type="button" class="ls-mini" data-preview="{x}"><img src="../assets/img/{q["img"]}" alt="" loading="lazy" width="900" height="900">'
+                f'<span><span class="ls-mini-name">{e(q["name"].replace("지티엠 ", ""))}</span>{price_html(q)}</span></button></li>')
+    line_html = f"""
+    <article class="ls-main">
+      <div class="ls-text"><p class="ls-en">PDRÉNZA</p><h3>피디렌자</h3><p class="ls-lead">PDRN X NMN X Pearl Tomato®<br>{e(summary(118).split('.')[0])}.</p><p class="ls-count">4개 제품</p></div>
+      <ul class="ls-cards">{''.join(card(x) for x in [105, 106, 118, 104])}</ul>
+    </article>
+    <div class="ls-row">
+      <article class="ls-photo">
+        <img class="ls-photo-img" src="../assets/img/etc/hero-b-pepticule.webp" alt="펩티큘 앰플을 바르는 모델" loading="lazy" width="1200" height="715">
+        <div class="ls-body"><p class="ls-en">PEPTICULE</p><h3>펩티큘</h3><p class="ls-lead">고농축 펩타이드 x 4세대 식물성 PDRN 스피큘</p>
+          <ul class="ls-minis">{mini(91)}{mini(90)}</ul></div>
+      </article>
+      <article class="ls-tint">
+        <div class="ls-body"><p class="ls-en">BALANCE</p><h3>밸런스</h3><p class="ls-lead">저자극 약산성 토너 · 세럼 · 크림 · 클렌징 젤</p>
+          <ul class="ls-minis grid2">{mini(22)}{mini(19)}{mini(16)}{mini(21)}</ul></div>
+      </article>
+    </div>"""
     sol_desc = {i["cat"]: i["text"] for i in S["ingredients"] if i["key"] != "patent"}
     sols = [c["url"].strip("/") for c in S["nav"][3]["children"]]
     sol_html = "".join(
@@ -249,7 +261,7 @@ def build_a():
 <section class="a-lines" id="line">
   <div class="wrap">
     <div class="sec-head"><div><p class="eyebrow">SIGNATURE LINES</p><h2>대표 라인</h2></div><p class="sec-lead">피부 고민과 루틴에 맞춰 이어 쓰는 GTM 코스메틱스의 라인입니다.</p></div>
-    <ul class="a-lc-grid">{line_html}</ul>
+    <div class="a-ls">{line_html}</div>
   </div>
 </section>
 

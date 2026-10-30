@@ -27,19 +27,31 @@
 .a-products .card-img { border-color: transparent; }
 .a-products .more { margin-top: 40px; text-align: center; }
 
-/* 대표 라인 */
-.a-lc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-.a-lc { display: flex; flex-direction: column; }
-.a-lc-img { display: block; background: var(--soft); padding: 36px; }
-.a-lc-img img { width: 100%; aspect-ratio: 1; object-fit: contain; background: #fff; transition: transform 0.5s ease; }
-.a-lc-img:hover img { transform: scale(1.03); }
-.a-lc-en { margin-top: 24px; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; color: var(--red); }
-.a-lc h3 { margin-top: 6px; font-size: 26px; font-weight: 600; letter-spacing: -0.03em; }
-.a-lc-lead { margin-top: 8px; color: var(--muted); font-size: 15px; min-height: 48px; }
-.a-lc-list { margin-top: 18px; border-top: 1px solid var(--line); }
-.a-lc-list button { width: 100%; text-align: left; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; display: flex; justify-content: space-between; min-height: 44px; }
-.a-lc-list button::after { content: "보기"; font-size: 12.5px; color: var(--muted); }
-.a-lc-list button:hover { color: var(--red); }
+/* 대표 라인 쇼케이스 */
+.a-ls { display: grid; gap: 24px; }
+.ls-en { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; color: var(--red); }
+.a-ls h3 { margin-top: 8px; font-size: 32px; font-weight: 600; letter-spacing: -0.04em; }
+.ls-lead { margin-top: 10px; color: var(--muted); font-size: 15px; line-height: 1.7; }
+.ls-main { display: grid; grid-template-columns: 300px 1fr; gap: 40px; padding: 48px; background: #f7e7e5; }
+.ls-text { display: flex; flex-direction: column; }
+.ls-count { margin-top: auto; font-size: 13px; color: var(--muted); padding-top: 24px; border-top: 1px solid rgba(35, 25, 22, 0.15); }
+.ls-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.ls-cards .card-img { border: 0; }
+.ls-cards .card-name { font-size: 14.5px; }
+.ls-row { display: grid; grid-template-columns: 1.15fr 1fr; gap: 24px; }
+.ls-photo { background: var(--soft); display: flex; flex-direction: column; }
+.ls-photo-img { width: 100%; height: auto; aspect-ratio: 16 / 8; object-fit: cover; object-position: 70% 30%; }
+.ls-body { padding: 36px 40px 40px; }
+.ls-tint { background: #eeeaf3; display: flex; align-items: center; }
+.ls-minis { margin-top: 24px; display: grid; gap: 10px; }
+.ls-minis.grid2 { grid-template-columns: 1fr 1fr; }
+.ls-mini { width: 100%; display: flex; align-items: center; gap: 14px; text-align: left; background: #fff; padding: 10px 14px 10px 10px; }
+.ls-mini img { width: 72px; height: 72px; object-fit: contain; flex-shrink: 0; }
+.ls-mini > span { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.ls-mini-name { font-size: 14px; font-weight: 600; line-height: 1.4; }
+.ls-mini .price { font-size: 12.5px; }
+.ls-mini .price strong { font-size: 13.5px; }
+.ls-mini:hover { box-shadow: inset 0 0 0 1px var(--ink); }
 
 /* 성분별 솔루션 */
 .a-solution { background: var(--soft); }
@@ -101,10 +113,13 @@
   .concept-a .sec-head { margin-bottom: 28px; align-items: flex-start; }
   .a-products .tabs { overflow-x: auto; flex-wrap: nowrap; width: 100%; padding-bottom: 4px; }
   .a-products .tabs [role="tab"] { flex-shrink: 0; }
-  .a-lc-grid { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 78%; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
-  .a-lc { scroll-snap-align: start; }
-  .a-lc-img { padding: 20px; }
-  .a-lc-lead { min-height: 0; }
+  .ls-main { grid-template-columns: 1fr; gap: 24px; padding: 28px 20px; }
+  .ls-cards { grid-template-columns: repeat(2, 1fr); gap: 20px 12px; }
+  .ls-count { margin-top: 16px; padding-top: 14px; }
+  .a-ls h3 { font-size: 26px; }
+  .ls-row { grid-template-columns: 1fr; }
+  .ls-body { padding: 24px 20px 28px; }
+  .ls-minis.grid2 { grid-template-columns: 1fr; }
   .sol-list { grid-template-columns: 1fr; }
   .sol-thumbs img { width: 56px; height: 56px; }
   .a-safety h2 { font-size: 22px; }
