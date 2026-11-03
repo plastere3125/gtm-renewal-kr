@@ -3,7 +3,7 @@
 import json, sys, urllib.request
 from playwright.sync_api import sync_playwright
 BASE = sys.argv[1].rstrip("/"); OUT = sys.argv[2]
-PAGES = ["", "a/", "b/"]
+PAGES = [""]
 VP = {"pc": (1440, 900), "mobile": (390, 844)}
 res = {"pages": [], "links": {}}
 with sync_playwright() as p:
@@ -38,11 +38,11 @@ with sync_playwright() as p:
             for l in info["links"]: res["links"].setdefault(l, None)
         # 모바일 메뉴 동작
         if vp == "mobile":
-            for path in ["a/", "b/"]:
+            for path in [""]:
                 pg.goto(f"{BASE}/{path}", wait_until="networkidle")
                 pg.click(".menu-btn"); pg.wait_for_timeout(300)
                 pg.click(".m-top >> nth=1"); pg.wait_for_timeout(300)
-                pg.screenshot(path=f"{OUT}/{path.strip('/')}_mobile_menu.png")
+                pg.screenshot(path=f"{OUT}/index_mobile_menu.png")
                 opened = pg.evaluate("!document.getElementById('drawer').hidden && !document.getElementById('m-sub-1').hidden")
                 pg.click(".drawer-close"); closed = pg.evaluate("document.getElementById('drawer').hidden")
                 pg.click(".card-btn >> nth=0"); pg.wait_for_timeout(300)

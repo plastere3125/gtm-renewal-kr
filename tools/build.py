@@ -4,6 +4,7 @@
 """
 import html
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -411,9 +412,17 @@ def build_index():
 
 
 if __name__ == "__main__":
-    (SITE / "a").mkdir(parents=True, exist_ok=True)
+    # 11/5 확정: B안 단일 메인 시안만 배포 (A안·시안 선택 페이지 제외)
+    import shutil
+    html = build_b().replace("../assets/", "assets/")
+    html = re.sub(r'\n<aside class="concept-bar".*?</aside>', "", html, flags=re.S)
+    assert "../" not in html, "상대경로 잔여"
+    (SITE / "index.html").write_text(html, encoding="utf-8")
+    shutil.rmtree(SITE / "a", ignore_errors=True)
+    # 예전 /b/ 링크로 들어와도 메인으로 이동
     (SITE / "b").mkdir(parents=True, exist_ok=True)
-    (SITE / "a" / "index.html").write_text(build_a(), encoding="utf-8")
-    (SITE / "b" / "index.html").write_text(build_b(), encoding="utf-8")
-    (SITE / "index.html").write_text(build_index(), encoding="utf-8")
+    (SITE / "b" / "index.html").write_text(
+        '<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex">'
+        '<meta http-equiv="refresh" content="0; url=../"><link rel="canonical" href="../">'
+        '<title>GTM 코스메틱스</title><a href="../">메인 시안으로 이동</a>\n', encoding="utf-8")
     print("built")

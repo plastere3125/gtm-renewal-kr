@@ -168,7 +168,7 @@
     if (!p || !modal) return;
     lastFocus = document.activeElement;
     var img = document.getElementById("pv-img");
-    img.src = "../assets/img/" + p.img;
+    img.src = "assets/img/" + p.img;
     img.alt = p.name;
     document.getElementById("pv-name").textContent = p.name;
     document.getElementById("pv-cat").textContent = p.cats.join(" · ");
