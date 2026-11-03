@@ -1,0 +1,66 @@
+name: Scheduled release (release-1105 → main)
+# 2026-11-05 10:00 KST (= 01:00 UTC) 에 release-1105 브랜치를 main에 합치고 배포
+on:
+  schedule:
+    - cron: "0 1 5 11 *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "true면 합치기 가능 여부만 확인(배포 안 함)"
+        default: "true"
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.merge.outputs.go }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - id: merge
+        run: |
+          DRY="${{ github.event.inputs.dry_run }}"
+          # 예약 실행은 2026년에만 (내년 같은 날 재실행 방지)
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%Y)" != "2026" ]; then
+            echo "2026년이 아니므로 건너뜀"; echo "go=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          if ! git ls-remote --exit-code --heads origin release-1105 >/dev/null; then
+            echo "release-1105 브랜치 없음 → 건너뜀"; echo "go=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          git fetch origin release-1105
+          if git merge-base --is-ancestor origin/release-1105 HEAD; then
+            echo "이미 반영됨 → 건너뜀"; echo "go=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git merge --no-edit origin/release-1105
+          if [ "$DRY" = "true" ]; then
+            echo "DRY RUN: 합치기 가능 확인 완료 (push·배포 안 함)"; echo "go=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          git push origin HEAD:main
+          echo "go=true" >> "$GITHUB_OUTPUT"
+  deploy:
+    needs: release
+    if: needs.release.outputs.go == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
