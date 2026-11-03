@@ -24,6 +24,7 @@
 .b-hero-chips a:hover { background: var(--ink); color: #fff; }
 
 /* 제품군 바로가기 */
+.b-find { background: #f5f2ee; } /* A안 제품 영역과 같은 베이지 → 흰 박스 구분 */
 .sc-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 12px; }
 .sc-tile { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 16px 8px 18px; border-radius: var(--radius); background: #fff; border: 1.5px solid transparent; min-height: 44px; }
 .sc-img { width: 100%; aspect-ratio: 1; }
